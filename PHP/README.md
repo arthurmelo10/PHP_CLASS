@@ -1,0 +1,1 @@
+Thus repository has the objective of preserve all the PHP classes
