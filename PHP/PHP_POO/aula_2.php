@@ -9,6 +9,7 @@
 <body>
     <?php
      echo "Olá mundo";
+     phpinfo();
     ?>
 </body>
 </html>
