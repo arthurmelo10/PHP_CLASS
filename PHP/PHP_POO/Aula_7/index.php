@@ -10,6 +10,7 @@
     <pre>
         <?php
             require_once 'Lutador.php';
+            require_once 'Luta.php';
 
             /*$l1 = new Lutador("Pretty Boy", "França", 30, 1.75, 110, 11, 2,1);
             $l1->apresentar();
@@ -25,11 +26,15 @@
 
 
             $L[0]->apresentar();
-            $L[2]->status();
+            $L[1]->apresentar();
+            /*$L[2]->status();
             $L[3]->perderLuta();
             $L[1]->ganharLuta();
-            $L[0]->empatarLuta();
+            $L[0]->empatarLuta();*/
 
+            $UEC01 = new Luta();
+            $UEC01->marcarLuta($L[0],$L[1]);
+            $UEC01->lutar();
             print_r($L);
         ?>
     </pre>    
