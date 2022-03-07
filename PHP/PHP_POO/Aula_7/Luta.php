@@ -53,20 +53,21 @@
             if($this->getAprovada()){
                 $this->desafiado->apresentar();
                 $this->desafiante->apresentar();
-                $vencedor=rand(0...2);
+                $vencedor=rand(0,2);
+                echo $vencedor."<br/>";
                 switch ($vencedor) {
                     case 0://empate da luta
-                        echo "Empatou";
+                        echo "<p><h1>Empatou</h1></p>";
                         $this->desafiado->empatarLuta();
-                        $this->$desafiante->empatarLuta();
+                        $this->desafiante->empatarLuta();
                         break;
                     case 1: // vitória desafiado
-                        echo $desafiado->getNome()." venceu";
+                        echo $this->desafiado->getNome()." venceu";
                         $this->desafiado->ganharLuta();
                         $this->desafiante->perderLuta();
                         break;
                     case 2:// vitória desafiante
-                        echo $desafiante->getNome." venceu";
+                        echo $this->desafiante->getNome()." venceu";
                         $this->desafiado->perderLuta();
                         $this->desafiante->ganharLuta();
                         break;

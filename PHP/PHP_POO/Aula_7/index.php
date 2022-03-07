@@ -34,8 +34,13 @@
 
             $UEC01 = new Luta();
             $UEC01->marcarLuta($L[0],$L[1]);
+            //print_r($L);
             $UEC01->lutar();
-            print_r($L);
+            $L[0]->status();
+            $L[1]->status();
+
+           
+            //print_r($UEC01);
         ?>
     </pre>    
 </body>

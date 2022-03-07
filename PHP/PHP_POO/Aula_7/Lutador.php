@@ -49,41 +49,41 @@
             $this->setDerrotas($de);
             $this->setEmpates($em);
         }
-        private function getNome(){
+        public function getNome(){
             return $this->nome;
         }
-        private function setNome(string $nome){
+        public function setNome(string $nome){
             $this->nome = $nome;
         }
-        private function getNacionalidade(){
+        public function getNacionalidade(){
             return $this->nacionalidade;
         }
-        private function setNacionalidade(string $nacionalidade){
+        public function setNacionalidade(string $nacionalidade){
             $this->nacionalidade = $nacionalidade;
         }
-        private function getIdade(){
+        public function getIdade(){
             return $this->idade;
         }
-        private function setIdade(int $idade){
+        public function setIdade(int $idade){
             $this->idade=$idade;
         }
-        private function getAltura(){
+        public function getAltura(){
             return $this->altura;
         }
-        private function setAltura(float $altura){
+        public function setAltura(float $altura){
             $this->altura= $altura;                     
         }
-        private function getPeso(){
+        public function getPeso(){
             return $this->peso;
         }
-        private function setPeso(float $peso){
+        public function setPeso(float $peso){
             $this->peso=$peso;
             $this->setCategoria();
         }
-        private function getCategoria(){
+        public function getCategoria(){
             return $this->categoria;
         }
-        private function setCategoria(){
+        public function setCategoria(){
             //$this->categoria=$categoria;
             if($this->getPeso() < 52.2) {
                 $this-> categoria="Inválido";
@@ -101,22 +101,22 @@
                 $this->categoria="Inválido";
             }
         }
-        private function getVitorias(){
+        public function getVitorias(){
             return $this->vitorias;
         }
-        private function setVitorias(int $vitorias){
+        public function setVitorias(int $vitorias){
             $this->vitorias=$vitorias;
         }
-        private function getDerrotas(){
+        public function getDerrotas(){
             return $this->derrotas;
         }
-        private function setDerrotas(int $derrotas){
+        public function setDerrotas(int $derrotas){
             $this->derrotas=$derrotas;
         }
-        private function getEmpates(){
+        public function getEmpates(){
             return $this->empates;
         }
-        private function setEmpates(int $empates){
+        public function setEmpates(int $empates){
             $this->empates=$empates;
         }
     }
