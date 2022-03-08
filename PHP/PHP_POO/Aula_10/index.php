@@ -27,9 +27,9 @@
             $pessoa4->setIdade(35);
             $pessoa4->setSexo("F");
                       
-            print_r($pessoa1);
+            /*print_r($pessoa1);
             print_r($pessoa2);
-            print_r($pessoa3);
+            print_r($pessoa3);*/
             print_r($pessoa4);
 
             $pessoa4->mudarTrabalho();
@@ -41,12 +41,12 @@
             $pessoa3->receberAum(550.00);
 
             print_r($pessoa4);
-            print_r($pessoa3);
-            $pessoa2->cancelarMatri();
-            print_r($pessoa2);
+            //print_r($pessoa3);
+            //$pessoa2->cancelarMatri();
+            //print_r($pessoa2);
 
             $pessoa4->mudarTrabalho();
-            print_r($pessoa4);
+            //print_r($pessoa4);
             
         ?>
     </pre>
