@@ -10,6 +10,12 @@
         abstract public function ganharExp();
         
         //métods especiais
+        public function __construct(string $name, int $idade, string $sexo){
+            $this->name = $name;
+            $this->idade = $idade;
+            $this->sexo = $sexo;
+        }
+
         public function getName(){
             return $this->name;
         }

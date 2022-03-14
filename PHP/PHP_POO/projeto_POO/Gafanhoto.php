@@ -9,10 +9,23 @@
 
         //métodos públicos
         public function ganharExp(){
-            $this->setExperiencia($this->getExpeirencia + 1);
+            $this->setExperiencia($this->getExpeirencia() + 1);
+        }
+
+        public function viuMaisUm(){
+            $this->setTotAssitido($this->getTotAssistido() + 1);
         }
         
         //métodos especiais
+        public function __construct(string $name, int $idade, string $sexo){
+            $this->name = $name;
+            $this->idade = $idade;
+            $this->sexo = $sexo;
+            $this->experiencia=0;
+            $this->login=false;
+            $this->totAssistido=0;
+        }
+
         public function getLogin(){
             return $this->login;
         }
