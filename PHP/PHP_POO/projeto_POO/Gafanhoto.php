@@ -9,11 +9,11 @@
 
         //métodos públicos
         public function ganharExp(){
-            $this->setExperiencia($this->getExpeirencia() + 1);
+            $this->setExperiencia($this->getExperiencia() + 1);
         }
 
         public function viuMaisUm(){
-            $this->setTotAssitido($this->getTotAssistido() + 1);
+            $this->setTotAssistido($this->getTotAssistido() + 1);
         }
         
         //métodos especiais
@@ -33,9 +33,9 @@
             $this->login = $login;
         }
         public function getTotAssistido(){
-            return $this->totAssintido;
+            return $this->totAssistido;
         }
-        public function setTotAssitido(int $totAssistido){
-            $this->totAssistido = $totAssistido;
+        public function setTotAssistido(){
+            $this->totAssistido = ($this->getTotAssistido() + 1);
         }
     }

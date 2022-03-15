@@ -13,12 +13,11 @@
         
         public function __construct(string $titulo){
             $this->titulo=$titulo;
-            $this->avaliação=1;
+            $this->avaliação=0;
             $this->views=0;
             $this->curtidas=0;
             $this->reproduzindo=false;
         }
-
 
         public function getTitulo() {
             return $this->titulo;
@@ -28,9 +27,11 @@
         }
         public function getViews(){
             return $this->views;
+            //echo "<h1>Estou aqui no getViews</h1>";
         }
-        public function setViews(int $views){
-            $this->views = $views;
+        public function setViews(){
+            $this->views = ($this-> getViews() +1);
+            //echo "<h1>ESTOU AQUI NO SETVIEWS</h1>";
         }
         public function getCurtidas(){
             return $this->curtidas;
@@ -54,6 +55,7 @@
         // métodos da interface
         public function play(){
             $this->setReproduzindo(true);
+            //$this->setViews();
         }
         public function pause(){
             $this->setReproduzindo(false);
