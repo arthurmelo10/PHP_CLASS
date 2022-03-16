@@ -48,8 +48,12 @@
         public function getAvaliação(){
             return $this->avalização;
         }
-        public function setAvaliação(int $avaliação){
-            $this->avaliação = $avaliação;
+        public function setAvaliação(float $avaliação){
+            $soma = $this->avaliação + $avaliação;
+            $media = $soma/$this->getViews();
+            $this->avaliação = $media;
+            echo "<br/>".$avaliação;
+            echo "<br/>".$soma; 
         }
 
         // métodos da interface

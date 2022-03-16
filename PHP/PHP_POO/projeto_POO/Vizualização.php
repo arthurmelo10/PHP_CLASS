@@ -54,7 +54,36 @@
                 $this->video->pause();
                 $this->video->setAvaliação(-5);
             }
+            if($resposta <> "Sim" && $resposta <> "Não"){
+                echo "Avaliação Incorreta !!";
+            }
         }
+
+        public function avaliarNota($nota) {
+            $this->video->setAvaliação($nota);
+            //echo "<br/>".$nota;
+        }
+
+        public function avaliarPorc(float $porc) {
+            $nova = 0;
+            if($porc<=20){
+                $nova = 3;
+            }
+            if($porc>20 && $porc<=50){
+                $nova = 5;
+            }
+            if($porc>50 && $porc<=80){
+                $nova = 8;
+            }
+            if($porc>80 && $porc<=100){
+                $nova = 10;
+            }
+
+            $this->video->setAvaliação($nova);
+        }
+
+
+
         
 
     }
