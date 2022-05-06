@@ -1,0 +1,21 @@
+{
+	"require": {
+		"twig/twig": "^2.7"
+	},
+
+    /*"autoload": {
+        "classmap": ["model/"] //fazer mapeamento da pasta model
+        //trabalhar com composer no padrão PSR4 , com namespace
+    },*/
+
+    "autoload": {
+        "psr-4": {
+            "EstBase\\": ["model/"]
+        }
+    },
+
+    "config": {
+        "vendor-dir": "app"
+    }
+    //rodar o comando composer update
+}
