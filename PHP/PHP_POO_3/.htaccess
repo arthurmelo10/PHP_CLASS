@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c> //nhabilitar o modo de reescrita
+
+RewriteEngine on //inicializar 
+RewriteCond %{REQUEST_FILENAME} !-f //passar o request file name, verificando se é diferente de arquivo ou de diretório
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewritwRule ^(.*)$ inndex.php?page=$1 [L,QSA] // regra de reescrita
+
+</IfModule>
