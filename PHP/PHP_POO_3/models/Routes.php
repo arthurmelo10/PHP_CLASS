@@ -70,11 +70,16 @@ class Routes
         $base = self::getHome();
 
         $links = array(
+
+            'INDEX' => $base,
             'TESTE' => $base . '/teste',
-            'CONTATO' => $base . '/contato'
+            'CONTATO' => $base . '/contato',
+            'NOTICIAS' => $base . '/noticias',
+            'LER' => $base . '/ler',
+
         );
 
-        return $links
+        return $links;
     }
 
 
