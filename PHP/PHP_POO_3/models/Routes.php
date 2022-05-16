@@ -57,7 +57,7 @@ class Routes
     /**
      * @return string pasta do tema
      */
-    public static function getTheme()
+    public static function getTheme() // retorna a url do meu tema
     {
         return self::getView() . '/' . Config::APP_DIR_THEME;
     }
