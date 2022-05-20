@@ -104,6 +104,7 @@ body {
     display: flex;
     text-decoration: none;
     color: #222;
+    justify-content: center;
 }
 
 .modulo > ul > li:hover {
