@@ -117,7 +117,9 @@ body {
     border: 2px solid #4caf50;
 }
 .modulo.verde > h3 { 
-    background-color: #4caf50; 
+    background-color: #4caf50;
+    display: flex;
+    justify-content: center; 
 }
 
 .modulo.vermelho {
