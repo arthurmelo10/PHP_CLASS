@@ -38,4 +38,16 @@ echo '$VAR3 = ' . $VAR3 = 'válida' ;
 echo '<br>' . '$camelCase = ' . $camelCase = 'válida';
 echo '<br>' . '$_var4_ = ' . $_var4_ = 'válida';
 // o mais importante que é exista uma padronização
+echo '<br>' . '$vâr5 = ' . $vâr5 = 'válida'; // evitar
+echo '<br>' . '$6var = inválida';
+echo '<br>' . '$%var7 = inválida';
+echo '<br>' . '$var8% = inválida';
+
+print('<p><b>Variáveis Pré Definindas</b><br>');
+echo '$_GET - pega valores da requisição';
+echo '<br>' . '$_SERVER';
+var_dump($_SERVER["HTTP_HOST"]);
+ECHO '<p><b>Consulte a documentação !!!</b></p>';
+
+
 
