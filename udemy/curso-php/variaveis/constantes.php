@@ -26,8 +26,13 @@ ECHO '<br>Atribuindo o valor de uma constante, a parte de uma variável, via fun
 ECHO '<p><b>Exemplos de constantes próprias do PHP</b>';
 echo '<br> Versão do PHP: '. PHP_VERSION;
 echo '<br> Maior Inteiro: '. PHP_INT_MAX;
-echo '<br> Mínimo Inteiro: '. PHP_INT_MIN; 
-echo '<br> Linha: ' . __LINE__;
+echo '<br> Mínimo Inteiro: '. PHP_INT_MIN;
+// constantes com duplo uderline 
+echo '<br> Linha: ' . __LINE__; 
 echo '<br> Arquivo: ' . __FILE__;
 echo '<br> Diretório: '  . __DIR__;
 ECHO '<br> Classe: ' . __CLASS__;
+//__DIR__ = 'opa';
+
+print('<p><b>Uma vez definida a constante, seu valor não pode ser alterado no algoritmo</b><br>');
+print('<br><b>Duas formas de fazer a declaração, com const, para valores literais, e com define, que permite uma flexibilidade maior, inclusive para com o uso de variáveis para a definição do valor da constante.</b></br>');
