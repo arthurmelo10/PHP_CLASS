@@ -168,6 +168,16 @@
                                 Operador Ternário
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=controle&file=switch_case">
+                                Switch Case
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=controle&file=desafio_switch">
+                                Desafio Switch
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
