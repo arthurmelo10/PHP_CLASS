@@ -51,7 +51,7 @@ echo '<br> $texto = ' . $texto;
 $texto = $texto . ' qualquer';
 echo '<br> $texto = $texto . qualquer -> ' . $texto;
 $texto .= ' de verdade!';
-echo '<br> $texto .= qualquer -> ' . $texto;
+echo '<br> $texto .= de verdade! -> ' . $texto;
 
 print('<p><b>Valor Padrão</b><br>');
 //$variávelInexistente = 'valor existente';
