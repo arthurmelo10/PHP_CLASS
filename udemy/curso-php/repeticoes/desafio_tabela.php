@@ -15,36 +15,36 @@ foreach ($matriz as $linha) {
     echo '<br>';
 }
 ?>
+
 <table>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
+    <?php
+    print('<p>Apresentar os dados do array $matriz acima em uma tabela html: ');
+    foreach ($matriz as $linha) {
+        echo '<tr>';
+        foreach ($linha as $valor) {
+            echo "<td>$valor</td>";
+        }
+        echo '</tr>';
+    }
+    ?>  
 </table>
+
+<table>
+    <?php
+    print('<p>Apresentar os dados do array $matriz acima em uma tabela html, alterando a cor da linha no caso do índice ser para ou impar : ');
+    foreach ($matriz as $index => $linha) {
+        $style = $index % 2 === 0 
+            ? 'background-color:lightblue'
+            : '';
+        echo "<tr style=$style>";
+        foreach($linha as $valor) {
+            echo "<td>$valor</td>";
+        }
+        echo '</td>';
+    }
+    ?>  
+</table>
+
 
 <style>
     table {
