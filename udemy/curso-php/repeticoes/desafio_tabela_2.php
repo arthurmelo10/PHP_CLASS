@@ -2,21 +2,21 @@
 
 <form action="#" method="post">
     <div>
-        <label for="Linhas">Linhas: </label>
-        <input type="text" name="linhas">
+        <label for="linhas">Linhas: </label>
+        <input type="text" value=<?= $_POST["linhas"]?> name="linhas">
     </div>
     <div>
-        <label for="Colunas">Colunas: </label>
-        <input type="text" name="colunas">
+        <label for="colunas">Colunas: </label>
+        <input type="text" value=<?= $_POST["colunas"]?> name="colunas">
     </div>
-    <button>Enviar</button>
+    <button>Gerar Tabela</button>
 </form>
 <pre>
     <?php
-        $linhas = $_POST["linhas"];
+        $linhas = intval($_POST["linhas"]);
         echo 'O valor de linhas é: ';
         print_r($linhas);
-        $colunas = $_POST["colunas"];
+        $colunas = intval($_POST["colunas"]);
         echo '<br>O valor de colunas é: ';
         print_r($colunas);
         $cont = 1;
@@ -43,6 +43,13 @@
     </table>
 
     <style>
+        form > * {
+            font-size: 1.8rem;
+        }
+
+        form > div {
+            margin-bottom: 10px;
+        }
         table {
             border: 1px solid #444;
             border-collapse: collapse;
