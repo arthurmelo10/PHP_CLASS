@@ -298,6 +298,11 @@
                                 Argumentos & Retorno
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=funcoes&file=desafio_palindromo">
+                                Desafio Palíndromo
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
