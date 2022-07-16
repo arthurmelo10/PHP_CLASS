@@ -75,3 +75,50 @@ function soma($num1, $num2)
 }
 
 echo '<br>echo soma(4,7): ', soma(4,7);
+echo '<br>echo soma(45,78): ', soma(45,78);
+
+echo '<hr>';
+
+print('<p><b>Exemplo 4 - Passagem de parâmetros</b><br>');
+
+$x = 4;
+echo '$x = '.$x.'<br>';
+$y = 5;
+echo '$y = '.$y.'<br>';
+echo 'echo soma($x, $y): '. soma($x,$y);
+echo '<br>Quando passamos um valor de variável, passamos o seu valor de fato ou a sua referência?</br>';
+
+function trocarValor($a, $novoValor) 
+{
+    $a = $novoValor;
+    echo $a;
+}
+echo '<br>function trocarValor($a, $novoValor) 
+<br>{
+    <br>$a = $novoValor;
+    <br>}';
+$variavel = 1;
+echo '<br>$variável = '.$variavel;
+echo '<br>passar por referência - passar o endereço de memória';
+trocarValor($variavel, 3);
+echo '<br>trocarValor($variavel, 3) = ',trocarValor($variavel, 3);
+echo '<br> $variavel após a função trocarValor: '. $variavel;
+echo '<br><b>Por padrão, o PHP passa o valor da variável por cópia, por valor, então, o valor original da variável não será alterado, fora do escopo do função</b></br>';
+
+echo '<p><b>Passar valor por referência</b><br>';
+function trocarValorDeVerdade(&$a, $novoValor)
+{
+    $a = $novoValor;
+    echo $a;
+}
+echo '<br>function trcarValorDeVerdade(&$a, $novoValor)
+<br>{
+    <br>$a = $novoValor;
+    <br>}';
+echo '<br> trocarValorDeVerdade($variavel, 5) = ',trocarValorDeVerdade($variavel, 5);
+echo '<br>$variavel após a função trocarValorDeVerdade: '.$variavel;
+
+echo '<br><b>A função consegue gerar impactos fora de seu escopo, quando passamos o valor do atributo por referência</b>';
+
+echo '<p><b>No paradigma funcional, isso é arriscado, deve ser evitado</b><br>';
+echo '<b>Tem que usar com cuidado (passagem de valor por referência no atributo das funções), pois pode gerar bugs</b>';
