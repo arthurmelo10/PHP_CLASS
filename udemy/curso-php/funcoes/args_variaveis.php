@@ -4,11 +4,12 @@
 print('<b>Exemplo 1 - Função Soma</b><br>');
 
 echo '
-<br>function soma($a, $b) 
-<br>{
-    <br>return $a + $b;
-<br>}
-';
+<pre>
+function soma($a, $b) 
+{
+    return $a + $b;
+}
+</pre>';
 function soma($a, $b) 
 {
     return $a + $b;
@@ -34,17 +35,18 @@ function somaCompleta(...$numeros)
     return $soma;
 }
 echo '
-<br>function somaCompleta(...$numeros)
-<br>{
-    <br>print_r($numeros);
-    <br>$soma = 0;
-    <br>foreach ($numeros as $numero) {
-        <br>$soma = $soma + $numero;
-        <br>}
+<pre>
+function somaCompleta(...$numeros)
+{
+    print_r($numeros);
+    $soma = 0;
+    foreach ($numeros as $numero) {
+        $soma = $soma + $numero;
+    }
 
-        <br>return $soma;
-<br>}
-';
+    return $soma;
+}
+</pre>';
 echo '<br>';
 echo 'somaCompleta(1, 2, 3, 4, 5) = ',somaCompleta(1, 2, 3, 4, 5);
 
@@ -58,35 +60,49 @@ echo '<br>somaCompleta(...$array) = ',somaCompleta(...$array);
 echo '<hr>';
 print('<p><b>Exemplo 3 - Funções Mistas (parâmetros fixos e variáveis)</b><br>');
 
-function membros($titular, ...$dependentes)
+function membros($titular, ...$dependentes): void
 {
     echo "Titular: $titular <br>";
-    if ($dependentes) {
-        foreach ($dependentes as $dependente) {
-            echo "Dependentes: $dependente <br>";
-        }
+
+    if (!$dependentes) {
+        echo 'Sem Dependentes';
+        return;
     }
-    // !$dependentes ? 'Sem dependentes' : 
-    // foreach ($dependentes as $dependente) {
-    //     echo "Dependentes: $dependente <br>";
-    // };
+
+    foreach ($dependentes as $dependente) {
+        echo "Dependentes: $dependente <br>";
+    }
 }
 
 echo '
-<br>function membros($titular, ...$dependentes)
-<br>{
-    <br>echo Titular: $titular;
-    <br>if ($dependentes) {
-        <br>foreach ($dependentes as $dependente) {
-            <br>echo Dependentes: $dependente;
-            <br>}
-            <br>}
-            <br>}
-';
-echo '<br>';
+<pre>
+function membros($titular, ...$dependentes): void
+{
+    echo "Titular: $titular";
+
+    if (!$dependentes) {
+        echo "Sem Dependentes";
+        return;
+    }
+
+    foreach ($dependentes as $dependente) {
+        echo "Dependentes: $dependente";
+    }
+    
+}
+</pre>';
 echo 'membros("Ana Silva", "Pedro", "Rafaela", "Amanda"): ';
 echo '<br>';
 membros('Ana Silva', "Pedro", "Rafaela", "Amanda");
 echo 'membros("Arthur"): ';
 echo '<br>';
 membros("Arthur");
+
+echo '<hr>';
+print('<p>Exemplo Explode x Implode<br>');
+$nomes = 'Arthur, Édipo, Robs, Will';
+echo '<br>';
+print_r(explode(',' , $nomes));
+$array = ['Arthur', 'Édipo', 'Robs', 'Will'];
+echo '<br>';
+echo implode('; ' , $array);

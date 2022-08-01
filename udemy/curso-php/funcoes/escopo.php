@@ -12,11 +12,13 @@ function imprimirMensagem()
     echo '<br>Até a próxima!';
 }
 print('<br>Chamando a função imprimirMensagem(): ');
-echo '<b><br>function imprimirMensagem()
-<br>{
-    <br>echo "Olá!";
-    <br>echo "Até a próxima!";
-    <br>}</b>';
+echo '<pre>
+<b>function imprimirMensagem()
+    {
+        echo "Olá!";
+        echo "Até a próxima!";
+    }
+</b></pre>';
 imprimirMensagem();
 imprimirMensagem();
 imprimirMensagem();
