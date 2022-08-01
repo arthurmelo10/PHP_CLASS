@@ -1,0 +1,57 @@
+<div class="titulo">Argumento Padrão</div>
+
+<?php
+print('<b>Exemplo 1</b><br>');
+
+echo 'O parâmetro ou argumento padrão apresenta um valor previo definido, na própria chamada da função<br>';
+
+function saudacao($nome = 'Senhor(a)', $sobrenome = 'Cliente')
+{
+    return "Bem vindo, $nome $sobrenome !<br>";
+}
+echo '
+<pre>
+function saudacao($nome = "Senhor(a)", $sobrenome = "Cliente")
+{
+    return "Bem vindo, $nome $sobrenome !";
+}
+</pre>';
+
+echo '<br>Chamando a função saudacao, sem passar nenhum parâmetro: ';
+echo '<br>saudacao(): ';
+echo saudacao();
+echo '<br>Chamando a função saudacao, passando apenas um parâmetro NULL: ';
+echo '<br>saudacao(NULL): ';
+echo saudacao(NULL);
+echo '<br>Chamando a função saudacao, passando dois parâmetros NULL,: ';
+echo '<br>saudacao(NULL,NULL): ';
+echo saudacao(NULL, NULL);
+echo '<br>Chamando a função saudacao, passando dois parâmetros: ';
+echo '<br>saudacao(Arthur,Melo): ';
+echo saudacao('Arthur','Melo');
+
+echo '<hr>';
+print('<p><b>Exemplo 2</b><br>');
+
+function anotarPedido($comida, $bebida = 'Água')
+{
+    echo "<br> Para comer: $comida";
+    echo "<br> Para beber: $bebida";
+}
+
+echo '
+<pre>
+function anotarPedido($comida, $bebida = "Água")
+{
+    echo "Para comer: $comida";
+    echo "Para beber: $bebida";
+}
+</pre>';
+
+echo '<br>Chamando a função saudacao, sem passar nenhum parâmetro: ';
+echo '<br>anotarPedido(): -> dá erro pois precisa do parâmetro de comida';
+//anotarPedido();
+
+echo '<br>Chamando a função saudacao, com parâmetro de comida: ';
+echo '<br>anotarPedido(pizza): ';
+anotarPedido('Pizza');
