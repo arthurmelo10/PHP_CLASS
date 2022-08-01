@@ -19,6 +19,7 @@ echo '<br>soma(14,15, 6, 7, 8, 9) = ', soma(14,15, 6, 7, 8, 9);
 echo '<br><b>Sempre pega os dois primeiros valores passados !!!</b>';
 echo '<br>soma(6, 5, 4) = ', soma(6, 5, 4);
 
+echo '<hr>';
 print('<p><b>Exemplo 2 - Função somaCompleta</b><br>');
 
 echo '<b>notação de três pontos - inclui os valores passados na função em um array</b>';
@@ -54,6 +55,7 @@ print_r($array);
 echo '<br>É possível espalhar o array nos parâmetros da chamada da função';
 echo '<br>somaCompleta(...$array) = ',somaCompleta(...$array);
 
+echo '<hr>';
 print('<p><b>Exemplo 3 - Funções Mistas (parâmetros fixos e variáveis)</b><br>');
 
 function membros($titular, ...$dependentes)
