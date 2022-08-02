@@ -313,6 +313,11 @@
                                 Argumento Padrão
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=funcoes&file=usando_tipos">
+                                Usando Tipos
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
