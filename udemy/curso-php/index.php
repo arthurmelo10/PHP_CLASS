@@ -333,6 +333,11 @@
                                 Recursividade
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=funcoes&file=desafio_busca_recurs">
+                                Desafio Busca Recursiva
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
