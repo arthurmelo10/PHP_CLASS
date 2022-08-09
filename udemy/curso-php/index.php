@@ -338,6 +338,11 @@
                                 Desafio Busca Recursiva
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=funcoes&file=retorno_funcao">
+                                Retornando Função
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
