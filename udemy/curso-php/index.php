@@ -350,6 +350,16 @@
                         </li>
                     </ul>
                 </div>
+                <div class="modulo azul-escuro">
+                    <h3>Orientação a Objeto</h3>
+                    <ul>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=classe_objeto">
+                                Classe x Objeto
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </div>
     </main>
