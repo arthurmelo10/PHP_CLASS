@@ -358,6 +358,11 @@
                                 Classe x Objeto
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=membros">
+                                Membros
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
