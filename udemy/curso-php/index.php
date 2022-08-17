@@ -363,6 +363,11 @@
                                 Membros
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=classe">
+                                Primeira Classe
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
