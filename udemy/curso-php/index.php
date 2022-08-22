@@ -368,6 +368,11 @@
                                 Primeira Classe
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=classe_data">
+                                Desafio Classe Data
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
