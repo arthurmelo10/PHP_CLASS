@@ -378,6 +378,56 @@
                                 Construtor & Destrutor
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=paradigmas">
+                                Paradigmas POO
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=pilar_01">
+                                Pilar 01
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=pilar_02">
+                                Pilar 02
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=pilar_03">
+                                Pilar 03
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=pilar_04">
+                                Pilar 04
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=heranca">
+                                Herança
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=mod_acessos">
+                                Modificadores de Acesso
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=static">
+                                Membros de Classe - Static
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=interface">
+                                Interface
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=abstract_teoria">
+                                Classe Abstrata - Teoria
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
