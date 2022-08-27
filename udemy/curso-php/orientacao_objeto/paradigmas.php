@@ -56,14 +56,14 @@
 
             <ul>
             <b>Exemplo</b>
-                <li>formatarData(nnascimento);
-                    possibilidade de alterar valoes por referência e causa mudanças em outros pontos do código</li>
+                <li>formatarData(nascimento);</li>
+                   <br> Possibilidade de alterar valoes por referência e causa mudanças em outros pontos do código</br>
 
                 <li>nascimento -> formatarData();</li>
-                A classe cria um objeto e o objeto é o dado, uma vez que o dado foi criado, o objeto tem as funções e este método vai mexer nos atributos internos
+                <br>A classe cria um objeto e o objeto é o dado, uma vez que o dado foi criado, o objeto tem as funções e este método vai mexer nos atributos internos</br>
                 <strong>o dado que era passado como argumento, ele passa a ser o ator principal</strong>
 
-                Objeto é um cara que agrupa as duas coisas, atributo e comportamento
+                <br>Objeto é um cara que agrupa as duas coisas, atributo e comportamento</br>
             </ul>
         </div>
     </section>
