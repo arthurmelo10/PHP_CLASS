@@ -1,4 +1,4 @@
-<div class="titulo">Pilar 01</div>
+<div class="titulo">Pilar 01 - Encapsulamento</div>
 
 <div>
     <strong>Pilares da Programação Orientada a Objeto</strong>

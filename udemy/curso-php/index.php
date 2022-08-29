@@ -385,12 +385,12 @@
                         </li>
                         <li>
                             <a href="exercicio.php?dir=orientacao_objeto&file=pilar_01">
-                                Pilar 01
+                                Pilar 01 - Encapsulamento
                             </a>
                         </li>
                         <li>
                             <a href="exercicio.php?dir=orientacao_objeto&file=pilar_02">
-                                Pilar 02
+                                Pilar 02 - Herança
                             </a>
                         </li>
                         <li>

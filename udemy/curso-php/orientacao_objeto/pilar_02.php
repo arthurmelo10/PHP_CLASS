@@ -1,4 +1,4 @@
-<div class="titulo">Pilar 02</div>
+<div class="titulo">Pilar 02 - Herança</div>
 
 <div>
     <p><strong>Herança</strong></p>
