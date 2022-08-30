@@ -28,8 +28,8 @@
                                     <li>Class Civic</li>
                                     <li>Class Ferrari</li>
                                 </ul> 
-                                Civic $c = new Civic => tipo de objeto Civic é na verdade uma instanciação da classe Civic
-                                Carro $c = new Civic => É possível criar um objeto referenciado a uma classe mais geral, mas instanciar a uma classe mais específica
+                                Civic $c = new Civic => tipo de objeto Civic é na verdade uma instanciação da classe Civic <br>
+                                Carro $c = new Civic => É possível criar um objeto referenciado a uma classe mais geral, mas instanciar a uma classe mais específica <br>
                                 $c = new Ferrari() => em cima da mesma variável, é possívelç ir trocando os subtipos, os tipos mais específicos, mesmo trabalhando com o tipo da variável mais genérico
                             </uL>
                         </div>

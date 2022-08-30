@@ -395,12 +395,12 @@
                         </li>
                         <li>
                             <a href="exercicio.php?dir=orientacao_objeto&file=pilar_03">
-                                Pilar 03
+                                Pilar 03 - Polimorfismo
                             </a>
                         </li>
                         <li>
                             <a href="exercicio.php?dir=orientacao_objeto&file=pilar_04">
-                                Pilar 04
+                                Pilar 04 - Abstração
                             </a>
                         </li>
                         <li>
