@@ -61,8 +61,16 @@ class A
         //tentativa 1
         echo "Estática = {$this->static}<br>";
         //tentativa 2
-        echo "Estática = ", A::$static;
+        echo "Estática = ", A::$static . "<br>";
+        //tentativa 3
+        echo "Estática = " . self::$static . "<br>";
      }
+
+     public static function mostrarStaticA()
+     {
+        //echo "Não estático = {$this->naoStatic}<br>";
+        echo "Estático = " . self::$static. "<br>";
+     } 
 }
 
 echo '
@@ -81,9 +89,19 @@ class A
      {
         echo "Não estática = {$this->naoStatic}";
         //tentativa 1
-        echo "Estática = {$this->static}";
+        echo "Estática = {$this->static}"; => $this representa esta instância
         //tentativa 2
         echo "Estática = ", A::$static;
+        //tentativa 3
+        echo "Estática = " . self::$static . "<br>";
+     }
+
+     public static function mostrarStaticA()
+     {
+        //echo "Não estático = {$this->naoStatic}<br>";
+        A partir de uma função estática, você não possui acesso ao $this
+        $this, não pode ser utilizado em funções estáticas
+        echo "Estático = " . self::$static. "<br>";
      }
 }
 </pre>';
@@ -93,3 +111,30 @@ echo '$classe = new A()';
 echo '<br>';
 echo '$classe->mostrarA()<br>';
 $classe->mostrarA();
+echo '<br>';
+echo '$classe->mostrarStaticA(): (NÃO É A FORMA IDEAL)<br>';
+$classe->mostrarStaticA();
+
+echo '<br>';
+echo '$classe::mostrarStaticA(): <br>';
+$classe::mostrarStaticA();
+
+echo '<br>';
+echo 'A::mostrarStaticA(): (ACESSAR DIRETAMENTE PELA CLASSE)<br>';
+A::mostrarStaticA();
+
+echo '<br>';
+echo 'A::$static = (ACESSAR DIRETAMENTE PELA CLASSE) = ';
+echo A::$static;
+
+echo '
+<p>
+<strong> Não é necessário instaciar uma classe para acessar atributos ou métodos estáticos. Podemos acessar via a notação com :: </strong>
+</p>';
+
+echo '<br>';
+A::$static = 'Alterado membro de classe !';
+echo "A::$static = Alterado membro de classe !<br>";
+echo 'A::$static = (ACESSAR DIRETAMENTE PELA CLASSE) = ';
+echo A::$static;
+echo '<br>É possível alterar o valor de um membro de classe da mesma forma que um membro de instância<br>';
