@@ -32,8 +32,8 @@
         </div>
         <div>
             Classe com 4 métodos concretos, pode ser uma classe abstrata<br>
-            Classe pode tern método abstrato e métodos concretos, também podem ser uma classe abstrata
-            A únca objeção é que as classes concretas precisam de métodos definidos
+            Classe pode ter métodos abstratos e métodos concretos, também podem ser uma classe abstrata<br>
+            A únca objeção é que as classes concretas precisam de todos os seus métodos definidos
         </div>
     </section>    
 </div>
