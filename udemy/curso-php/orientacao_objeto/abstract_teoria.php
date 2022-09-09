@@ -25,7 +25,15 @@
         </ul>
 
         <div>
-            Interface tem as suas vantagens, pois uma classe pode implementar várias interfaces aos mesmo tempo 
+            <ul>
+                <li>Interface tem as suas vantagens, pois uma classe pode implementar várias interfaces aos mesmo tempo;</li>
+                <li>Interface podem extender mais de uma interface também;</li>
+            </ul>
+        </div>
+        <div>
+            Classe com 4 métodos concretos, pode ser uma classe abstrata<br>
+            Classe pode tern método abstrato e métodos concretos, também podem ser uma classe abstrata
+            A únca objeção é que as classes concretas precisam de métodos definidos
         </div>
     </section>    
 </div>
