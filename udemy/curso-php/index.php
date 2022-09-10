@@ -428,6 +428,16 @@
                                 Classe Abstrata - Teoria
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=abstract">
+                                Classe Abstrata - Prática
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=desafio_7_erros">
+                                Desafio dos 7 erros
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
