@@ -438,6 +438,11 @@
                                 Desafio dos 7 erros
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=mod_final">
+                                Modificador Final
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
