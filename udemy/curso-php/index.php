@@ -443,6 +443,11 @@
                                 Modificador Final
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=trait_01">
+                                Trait #01
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>

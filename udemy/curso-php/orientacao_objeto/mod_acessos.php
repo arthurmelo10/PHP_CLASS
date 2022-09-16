@@ -31,7 +31,7 @@ class A
     {
         echo "Serei transmitido por herança<br>";
         /**
-         * Funnção protegida só consegue ser chamada de forma direta na classe que extende da classe pai
+         * Função protegida só consegue ser chamada de forma direta na classe que extende da classe pai
          */
     }
     
@@ -39,7 +39,7 @@ class A
     {
         echo "Não vou imprimir<br>";
         /**
-         * Funnção privada só consegue ser chamada de forma direta, a partir da própria classe
+         * Função privada só consegue ser chamada de forma direta, a partir da própria classe
          * O objeto ou instância da classe A, não tem acesso direto a função nãoMostrar();
          */
     }
@@ -89,7 +89,8 @@ echo '$a->mostrarA(): <br>';
 $a->mostrarA();
 //$a->nãoMostrar();
 echo '$a->naoMostrar() => gera um erro 500 -> Uncaught Error: Call to private method A::nãoMostrar()';
-echo '<br>Não podemos acessaar atributos e métodos, privados, de forma direta, somente com base em um método público que internamente, acesse os atributos privados <br>';
+echo '<br>Não podemos acessaar atributos e métodos, privados, de forma direta, somente com base em um método público que internamente, .
+acesse os atributos privados <br>';
 echo '$a->protegido => gera erro 500, só podemos acessar o atribudo protegido via herança ou via uma função pública que acessa o conteúdo protegido';
 echo '<p>Se o método privado não for chamado dentro da própria classe, não faz sentido nenhum ele existir !! </p>';
 
