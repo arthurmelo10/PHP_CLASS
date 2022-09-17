@@ -448,6 +448,16 @@
                                 Trait #01
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=trait_02">
+                                Trait #02
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=met_magicos">
+                                Métodos Mágicos
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
