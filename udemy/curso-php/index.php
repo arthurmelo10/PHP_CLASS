@@ -458,6 +458,11 @@
                                 Métodos Mágicos
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=orientacao_objeto&file=polimorfismo">
+                                Polimorfismo
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
