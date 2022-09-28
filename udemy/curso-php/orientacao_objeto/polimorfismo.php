@@ -148,5 +148,5 @@ echo '<p>
 No PHP, faz com que no cenário normal, não precisa amarrar o tipo.<br> 
 Mas é muito importante, para identificar corretamente as classes que podem entrar dentro de cada método<br>
 Mesmo que o php tenha uma linguagem dinâmica<br>
-</strong>'
+</strong>
 </p>';
