@@ -473,6 +473,21 @@
                                 Includes
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=includes&file=include_funcao">
+                                Includes Função
+                            </a>
+                        </li>                        
+                        <li>
+                            <a href="exercicio.php?dir=includes&file=include_require">
+                                Includes x Require
+                            </a>
+                        </li>                                      
+                        <li>
+                            <a href="exercicio.php?dir=includes&file=require_return">
+                                Require & Return
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
