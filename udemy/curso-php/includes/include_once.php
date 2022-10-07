@@ -6,8 +6,8 @@ ini_set('display_errors', 1);
 echo 'include(include_once_arquivo.php): <br>';
 include('include_once_arquivo.php');
 echo '<br>';
-//echo 'require(include_once_arquivo.php):';
-//require('include_once_arquivo.php');
+echo 'require(include_once_arquivo.php):';
+require('include_once_arquivo.php');
 
 echo "Variável = '{$variavel}'.<br>";
 $variavel = 'Variável Alterada';
@@ -31,4 +31,6 @@ echo '<br>';
 echo "require_once('include_once_arquivo.php')<br>";
 require_once('include_once_arquivo.php');
 echo "Variável = '{$variavel}'.<br>";
+
+echo 'A partir do uso do once, não e mais necessário proteger a função, <br>pois o mesmo garante que a função não será redeclarada<br>';
 
