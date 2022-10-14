@@ -484,4 +484,19 @@
             </li>
         </ul>
     </div>
+    <div class="modulo laranja-escuro">
+        <h3>Namespace</h3>
+        <ul>
+            <li>
+                <a href="exercicio.php?dir=namespace&file=namespace_introducao">
+                    Introdução
+                </a>
+            </li>
+            <li>
+                <a href="exercicio.php?dir=namespace&file=basico">
+                    Básico
+                </a>
+            </li>
+        </ul>
+    </div>
 </nav>

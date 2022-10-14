@@ -193,3 +193,12 @@ body {
     display: flex;
     justify-content: center;  
 }
+
+.modulo.laranja-escuro {
+    border: 2px solid #E65527;
+}
+.modulo.laranja-escuro > h3 { 
+    background-color: #E65527;
+    display: flex;
+    justify-content: center;  
+}
