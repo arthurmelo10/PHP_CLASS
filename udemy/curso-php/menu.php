@@ -497,6 +497,11 @@
                     Básico
                 </a>
             </li>
+            <li>
+                <a href="exercicio.php?dir=namespace&file=sub_namespaces">
+                    Sub Namespace
+                </a>
+            </li>
         </ul>
     </div>
 </nav>
