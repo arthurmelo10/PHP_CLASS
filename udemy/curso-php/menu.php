@@ -507,6 +507,11 @@
                     Use/As
                 </a>
             </li>
+            <li>
+                <a href="exercicio.php?dir=namespace&file=desafio">
+                    Desafio Namespace
+                </a>
+            </li>
         </ul>
     </div>
 </nav>
