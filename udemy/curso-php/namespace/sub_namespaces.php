@@ -42,7 +42,7 @@ echo '\App\Principal\Especifico\CONSTANTE = '. \App\Principal\Especifico\CONSTAN
 echo 'constant( \\ . __NAMESPACE__ . \CONSTANTE) = ' . constant('\\' . __NAMESPACE__ . '\CONSTANTE'). '<br>';
 
 /**
- * POsso ter mais de um namespace no mesmo arquivo, 
+ * Posso ter mais de um namespace no mesmo arquivo, 
  * mas o mais comum e boa prática é organizar os namespaces em pastas, 
  * para ter uma organização melhor do seu código
  */
