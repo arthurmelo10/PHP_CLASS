@@ -1,0 +1,36 @@
+body.login {
+    grid-template-rows: 120px 1fr 60px;
+    grid-template-areas: 
+        "cabecalho" 
+        "principal"
+        "rodape";
+}   
+
+.principal {
+    height: calc(100vh -180px);
+}
+
+h3 {
+    font-size: 2.1rem;
+    margin: 20px
+}
+
+form > div {
+    padding-bottom: 15px;
+}
+
+label, input, button {
+    font-size: 1.5rem;
+}
+
+button {
+    color: white;
+    background-color: green;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
