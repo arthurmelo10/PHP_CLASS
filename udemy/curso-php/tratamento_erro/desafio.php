@@ -17,7 +17,7 @@ use Exception;
 
 <?php
 
-class ResultadoException extends Exception {
+class ResultadoException extends \Exception {
     public function __construct($message, $code = 0, $previous = null) 
     {
         //echo "Chamando Resultado Exception<br>";
@@ -27,7 +27,7 @@ class ResultadoException extends Exception {
 
 echo '
 <pre>
-class ResultadoException extends Exception {
+class ResultadoException extends \Exception {
     public function __construct($message, $code = 0, $previous = null) 
     {
         parent::__construct($message, $code, $previous);
@@ -40,7 +40,7 @@ function intdiv(int $a, int $b): int
     $resultado = $a/$b;
     
     if ($b === 0) {
-        throw new DivisionByZeroError("Denominador não pode ser 0, cabeção!!");
+        throw new \DivisionByZeroError("Denominador não pode ser 0, cabeção!!");
     }
 
     if (!is_int($resultado)) {
@@ -57,7 +57,7 @@ function intdiv(int $a, int $b): int
     $resultado = $a/$b;
     
     if ($b === 0) {
-        throw new DivisionByZeroError("Denominador não pode ser 0, cabeção!!");
+        throw new \DivisionByZeroError("Denominador não pode ser 0, cabeção!!");
     }
 
     if (!is_int($resultado)) {
