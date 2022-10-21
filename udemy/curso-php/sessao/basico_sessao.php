@@ -1,7 +1,7 @@
 <div class="titulo">Sessão</div>
 
 <?php
-session_start();
+echo 'session_start()'. session_start();
 /**
  * Primeiro comando
  * tem a disposição a sessão
