@@ -20,7 +20,8 @@ if (!$_SESSION['usuario']) {
         <h2>Índice dos Exercícios</h2>
     </header>
     <nav class="navegacao">
-        
+        <span class="usuario">Usuário: <?= $_SESSION['usuario']?></span>
+        <a href="logout.php" class="vermelho"> Sair </a>
     </nav>
     <main class="principal">
         <div class="conteudo">
