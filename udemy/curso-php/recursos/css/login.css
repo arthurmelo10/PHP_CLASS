@@ -23,9 +23,14 @@ label, input, button {
     font-size: 1.5rem;
 }
 
-button {
+button.entrar {
     color: white;
     background-color: green;
+}
+
+a.registro {
+    color: white;
+    background-color: blue;
 }
 
 .conteudo {

@@ -1,28 +1,12 @@
 <?php
 session_start();
 
+require_once 'usuarios.php';
+
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 
 if ($email) {
-    $usuarios = [
-        [
-            "nome" => "João Silva",
-            "email" => "joao@email.com.br",
-            "senha" => "123",
-        ],
-        [
-            "nome" => "Maria Silva",
-            "email" => "msilva@email.com.br",
-            "senha" => "abc",
-        ],
-        [
-            "nome" => "Roberto Costa",
-            "email" => "rcosta@email.com.br",
-            "senha" => "123456",
-        ],
-    ];
-
     foreach ($usuarios as $usuario) {
         $emailValido = $email === $usuario['email'] ? true : false;
         $senhaValida = $senha === $usuario['senha'] ? true : false;
@@ -35,7 +19,7 @@ if ($email) {
     }
 
     if (!$_SESSION['usuario']) {
-        $_SESSION['erros'] = ['Usuário/Senha Inválido !'];
+        $_SESSION['erros'] = ['Por favor, cadastra-se'];
     }
 }
 ?>
@@ -75,7 +59,8 @@ if ($email) {
                     <label for="senha">Senha:</label>
                     <input type="password" name="senha" id="senha">
                 </div>
-                <button>Entrar</button>        
+                <button class="entrar">Entrar</button>
+                <a href="register.php" class="registro">Cadastra-se</a>        
             </form>
         </div>
     </main>
