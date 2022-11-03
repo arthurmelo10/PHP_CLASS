@@ -12,7 +12,9 @@
 
     <h1>
         <?php
-            echo 'Hello World PHP';
+            $greeting = 'Hello';
+            
+            echo "$greeting World PHP";
         ?>
     </h1>    
 </body>
