@@ -554,4 +554,14 @@
             </li>
         </ul>
     </div>
+    <div class="modulo azul">
+        <h3>API</h3>
+        <ul>
+            <li>
+                <a href="exercicio.php?dir=api&file=datas_01">
+                    Datas #01
+                </a>
+            </li>
+        </ul>
+    </div>
 </nav>
