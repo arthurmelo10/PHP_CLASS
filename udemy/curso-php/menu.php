@@ -567,6 +567,11 @@
                     Datas #02
                 </a>
             </li>
+            <li>
+                <a href="exercicio.php?dir=api&file=escrever_arquivo">
+                    Escrever Arquivo
+                </a>
+            </li>
         </ul>
     </div>
 </nav>
