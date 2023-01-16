@@ -27,7 +27,7 @@ Encapsulamento da TV:
     <li>o capacitor não faz parte da interface, pois não está acessível ao usuário</li>
 </ul>
 
-<br>Aquilo que está visível dentroda classe, os membros visíveis, os atributos e os comportamentos<br>
+<br>Aquilo que está visível dentro da classe, os membros visíveis, os atributos e os comportamentos<br>
 ';
 
 
