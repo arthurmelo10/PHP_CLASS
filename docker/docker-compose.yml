@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+
+  app: 
+    # image: ubuntu
+    build: 
+      context: ./.docker/build/app/
+    tty: true
+
+  mysql:
+    image: mysql
+    # ports:
+    #   - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+  
+  mysql_2:
+    image: mysql
+    # ports:
+    #   - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+
