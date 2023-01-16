@@ -594,4 +594,14 @@
             </li>
         </ul>
     </div>
+    <div class="modulo roxo">
+        <h3>Formulário</h3>
+        <ul>
+            <li>
+                <a href="exercicio.php?dir=form&file=create_form">
+                    Criando um Formulário
+                </a>
+            </li>
+        </ul>
+    </div>
 </nav>
