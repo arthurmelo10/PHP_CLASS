@@ -637,6 +637,16 @@
                     Excluir Registros do Banco - 2
                 </a>
             </li>
+            <li>
+                <a href="exercicio.php?dir=db&file=inserir_registro_2">
+                    Inserir Registro 2
+                </a>
+            </li>
+            <li>
+                <a href="exercicio.php?dir=db&file=alterar">
+                    Alterar Registro
+                </a>
+            </li>
         </ul>
     </div>
 </nav>
