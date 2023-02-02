@@ -604,4 +604,70 @@
             </li>
         </ul>
     </div>
+    <div class="modulo laranja">
+        <h3>Banco de Dados</h3>
+        <ul>
+            <li>
+                <a href="exercicio.php?dir=db&file=criar_banco">
+                    Criar Banco de Dados
+                </a>
+            </li>
+            <li>
+                <a href="exercicio.php?dir=db&file=criar_tabela">
+                    Criar Tabela no Banco de Dados
+                </a>
+            </li>
+            <li>
+                <a href="exercicio.php?dir=db&file=inserir_registro_1">
+                    Inserir Registro 1
+                </a>
+            </li>
+            <li>
+                <a href="exercicio.php?dir=db&file=consultar">
+                    Consultar Registros no Banco
+                </a>
+            </li>
+            <li>
+                <a href="exercicio.php?dir=db&file=excluir_1">
+                    Excluir Registros do Banco
+                </a>
+            </li>
+            <li>
+                <a href="exercicio.php?dir=db&file=excluir_2">
+                    Excluir Registros do Banco - 2
+                </a>
+            </li>
+            <li>
+                <a href="exercicio.php?dir=db&file=inserir_registro_2">
+                    Inserir Registro 2
+                </a>
+            </li>
+            <li>
+                <a href="exercicio.php?dir=db&file=alterar">
+                    Alterar Registro
+                </a>
+            </li>
+            <li>
+                <a href="exercicio.php?dir=db&file=inserir_pdo">
+                    PDO: Inserir
+                </a>
+            </li>
+            <li>
+                <a href="exercicio.php?dir=db&file=consultar_pdo">
+                    PDO: Consultar
+                </a>
+            </li>
+            <li>
+                <a href="exercicio.php?dir=db&file=excluir_pdo">
+                    PDO: Excluir
+                </a>
+            </li>
+            <li>
+                <a href="exercicio.php?dir=db&file=alterar_pdo">
+                    PDO: Alterar
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
 </nav>
