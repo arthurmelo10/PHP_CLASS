@@ -9,7 +9,7 @@
 
     if ($_GET['excluir']) {
         $excluirSQL = "DELETE FROM cadastro WHERE id = ?"; // não fazer uma interpolação ou concatenação, é muito perigoso
-        $statement = $conexao->prepare($excluirSQL); // evita o sql injection
+        $statement = $conexao->prepare($excluirSQL); // evita o sql injection, 
         $statement->bind_param("i", $_GET['excluir']); // rever explicação
         $statement->execute(); // rever explicação
     }
