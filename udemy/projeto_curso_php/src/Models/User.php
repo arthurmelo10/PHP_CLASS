@@ -1,7 +1,4 @@
 <?php
-require_once(realpath(MODEL_PATH . '/Model.php'));
-
-
 class User extends Model
 {
     /**
@@ -9,5 +6,17 @@ class User extends Model
      * Campos a serem preenchidos 
      */
 
-
+     protected static $tableName = 'users';
+     /**
+      * Mini framework de persistência
+      */
+     protected static $columns = [
+        'id',
+        'name',
+        'password',
+        'email',
+        'start_date',
+        'end_date',
+        'is_admin',
+     ];
 }
