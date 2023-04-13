@@ -44,7 +44,7 @@ class Database
         }
     }
 
-    public static function getResultFronQuery($sql)
+    public static function getResultFromQuery($sql)
     {
         $conexao = self::getConnection();
         $result = $conexao->query($sql);
