@@ -1,0 +1,25 @@
+version: "3.3"
+services:
+  innout:
+    build: 
+      context: ./
+    ports: 
+      - "5000:80"
+    volumes:
+      - .:/var/www/html
+
+  mysql:
+    image: mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:  
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
+      driver: local
+
+
+

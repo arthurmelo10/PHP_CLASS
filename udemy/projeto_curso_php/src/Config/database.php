@@ -3,7 +3,7 @@
 // require_once(dirname(__FILE__, 2) . '/src/Config/databaseInterface.php');
 
 
-class Database
+class Database 
 {
     
     public static function getConnection(): mysqli 
@@ -11,7 +11,8 @@ class Database
         $envPath = realpath(dirname(__FILE__) . '/../.env');
         $env = parse_ini_file($envPath);
 
-        $conexao = new mysqli($env['HOST'], $env['USERNAME'], $env['PASSWORD'], $env['DATABASE']);
+        $conexao = new mysqli($env['HOST'], $env['USERNAME'], $env['PASSWORD'], $env['DATABASE'], 3306);
+        
 
         if ($conexao->connect_error) {
             die("Erro: " . $conexao->connect_error);
@@ -27,7 +28,7 @@ class Database
         $conexao = self::getConnection();
 
         foreach ($sql as $script) {
-            $result = $conexao->query($script);
+            $conexao->query($script);
         }
         
     }
@@ -40,7 +41,7 @@ class Database
         $conexao = self::getConnection();
 
         foreach ($sql as $script) {
-            $result = $conexao->query($script);
+            $conexao->query($script);
         }
     }
 
