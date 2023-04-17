@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/comum.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/iconfont.min.css">
+    <link rel="stylesheet" href="assets/css/icofont.min.css">
     <link rel="stylesheet" href="assets/css/login.css">
     <title>In 'n Out</title>
 </head>
 <body>
-    <form class="form-login" action="#" method="post">
+    <form class="form-login" method="post">
         <div class="login-card card">
             <div class="card-header">
                 <i class="icofont-travelling mr-2"></i>
@@ -28,8 +28,8 @@
                         type="email" 
                         id="email" 
                         name="email"
-                        class="form-control <?= $errors['email'] ? 'is-invalid': ''?>"
-                        value="<?= $_POST['email'] ?>"
+                        class="form-control <?= isset($errors['email']) ? 'is-invalid': ''?>"
+                        value="<?= $_POST['email'] ?? "" ?>" 
                         placeholder="Informe o e-mail" autofocus
                         >
                         <div class="invalid-feedback">
@@ -39,7 +39,7 @@
                 <div class="form-group">
                     <label for="password">Senha</label>
                     <input type="password" id="password" name="password"
-                        class="form-control <?= $errors['password'] ? 'is-invalid': ''?>"
+                        class="form-control <?= isset($errors['password']) ? 'is-invalid': ''?>"
                         placeholder="Informe a senha"
                     >
                     <div class="invalid-feedback">
@@ -54,6 +54,6 @@
             </div>
         </div>
     </form>
-    <?=$texto?>
+    <?=$texto ?? ""?>
 </body>
 </html>
