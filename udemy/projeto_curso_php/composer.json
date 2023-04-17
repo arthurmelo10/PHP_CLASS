@@ -1,0 +1,8 @@
+{
+    "name": "arthur/projeto_curso_php",
+    "description": "Projeto particular para estudos de php",
+    "type": "project",
+    "require": {
+        "bramus/router": "^1.6"
+    }
+}
