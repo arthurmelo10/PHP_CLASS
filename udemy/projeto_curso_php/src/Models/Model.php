@@ -33,7 +33,7 @@ Class Model
         $this->values[$key] = $value;
     }
 
-    public static function get($filters = [], $columns = '*')
+    public static function get(array $filters = [], string $columns = '*')
     {
         $objects = [];
 
@@ -49,7 +49,7 @@ Class Model
         return $objects;
     }
 
-    public static function getOne($filters = [], $columns = '*')
+    public static function getOne(array $filters = [], string $columns = '*')
     {
         $class = get_called_class();
 
@@ -85,10 +85,7 @@ Class Model
         return $sql;
     }
 
-    /**
-     * @return mixed
-     */
-    private static function getFormattedValue($value)
+    private static function getFormattedValue($value): mixed
     {
         if (is_null($value)) {
             return null;
