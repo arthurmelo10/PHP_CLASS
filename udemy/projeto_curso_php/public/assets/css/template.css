@@ -46,6 +46,7 @@ header.header .spacer {
 
 header.header .dropdown {
     position: relative;
+    height: 100%;
 }
 
 header.header .dropdown-button {
