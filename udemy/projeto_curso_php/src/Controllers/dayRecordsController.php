@@ -1,3 +1,7 @@
 <?php
+session_start();
+requireValidSession();
 
-loadTemplateView('dayRecordsView');
+$today = date("d/m/Y");
+
+loadTemplateView('dayRecordsView', ['today' => $today]);
