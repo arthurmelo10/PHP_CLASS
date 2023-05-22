@@ -3,9 +3,8 @@
 
     $message = [];
 
-    $exception = null;
-
     if ($exception) {
+        
         $message = [
             'type' => 'error',
             'message' => $exception->getMessage()
