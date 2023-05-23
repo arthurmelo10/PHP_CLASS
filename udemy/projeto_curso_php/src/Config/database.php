@@ -55,6 +55,20 @@ class Database
         return $result;
     }
 
+    public static function executeSQL($sql)
+    {
+        $conexao = self::getConnection();
+
+        if(!mysqli_query($conexao, $sql)) {
+            throw new Exception(mysqli_error($conexao));
+        }
+
+        $id = $conexao->insert_id;
+        $conexao->close();
+
+        return $id;
+    }
+
     private function createTables()
     {
         $sqls = [
@@ -102,6 +116,4 @@ class Database
 
         return $sqls;
     }
-
-
 }
