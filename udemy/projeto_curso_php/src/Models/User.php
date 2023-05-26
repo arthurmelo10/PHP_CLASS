@@ -6,11 +6,11 @@ class User extends Model
      * Campos a serem preenchidos 
      */
 
-     protected static $tableName = 'users';
+     protected static string $tableName = 'users';
      /**
       * Mini framework de persistência
       */
-     protected static $columns = [
+     protected static array $columns = [
         'id',
         'name',
         'password',

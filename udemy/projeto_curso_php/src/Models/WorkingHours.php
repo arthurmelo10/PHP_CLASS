@@ -2,9 +2,9 @@
 
 class WorkingHours extends Model
 {
-    protected static $tableName = 'working_hours';
+    protected static string $tableName = 'working_hours';
     
-    protected static $columns = [
+    protected static array $columns = [
         'user_id',
         'work_date',
         'time1',

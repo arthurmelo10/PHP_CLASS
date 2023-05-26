@@ -2,9 +2,9 @@
 
 Class Model 
 {
-    protected static $tableName = '';
-    protected static $columns = [];
-    protected $values = [];
+    protected static string $tableName = '';
+    protected static array $columns = [];
+    protected array $values = [];
 
     public function __construct(array $arr)
     {
