@@ -28,4 +28,28 @@ class WorkingHours extends Model
 
         return $registry;
     }
+
+    public function makeAppointment(string $time) 
+    {        
+        $timeColumn = $this->getNextAppointment();
+        
+        if (!$timeColumn) {
+            throw new AppException("Você já fez todas as marcações");
+        }
+
+        $this->$timeColumn = $time;
+        
+        $this->id ? $this->update() : $this->insert();
+
+    }
+
+    private function getNextAppointment()
+    {
+        if(!$this->time1) return 'time1';
+        if(!$this->time2) return 'time2';
+        if(!$this->time3) return 'time3';
+        if(!$this->time4) return 'time4';
+
+        return null;
+    }
 }
