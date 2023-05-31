@@ -2,16 +2,16 @@
 
 Class Model 
 {
-    protected static $tableName = '';
-    protected static $columns = [];
-    protected $values = [];
+    protected static string $tableName = '';
+    protected static array $columns = [];
+    protected array $values = [];
 
     public function __construct(array $arr)
     {
-        $this->loafFromArray($arr);
+        $this->loadFromArray($arr);
     }
 
-    public function loafFromArray(array $arr)
+    public function loadFromArray(array $arr)
     {
         if ($arr) {
             foreach ($arr as $key => $value) {
@@ -25,7 +25,7 @@ Class Model
      */
     public function __get($key) 
     {
-        return $this->values[$key];
+        return isset($this->values[$key])? $this->values[$key] : null ;
     }
 
     public function __set($key, $value): void
@@ -89,13 +89,14 @@ Class Model
 
     public function update()
     {
-        $sql = "UPDATE" . static::$tableName . "SET ";
+        $sql = "UPDATE " . static::$tableName . " SET ";
+
         foreach (static::$columns as $column) {
-            $sql.= "$column = " .static::getFormattedValue($this->$column). ",";
+            $sql.= " $column = " . static::getFormattedValue($this->$column) . ",";
         }
 
         $sql[strlen($sql)-1] = ' ';
-
+        
         $sql .= "WHERE id = {$this->id}";
 
         Database::executeSQL($sql);
@@ -118,7 +119,7 @@ Class Model
     private static function getFormattedValue($value): mixed
     {
         if (is_null($value)) {
-            return null;
+            return 'NULL';
         }
 
         if (gettype($value) === 'string') {

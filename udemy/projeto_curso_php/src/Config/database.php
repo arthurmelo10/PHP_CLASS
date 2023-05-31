@@ -64,6 +64,7 @@ class Database
         }
 
         $id = $conexao->insert_id;
+
         $conexao->close();
 
         return $id;

@@ -8,12 +8,13 @@ loadModel('WorkingHours');
 $today = date("d/m/Y");
 
 $user = $_SESSION['user'];
-$userWorkingHours = WorkingHours::loadFromUserAndDate($user->id, date("Y-m-d"));
+
+$records = WorkingHours::loadFromUserAndDate($user->id, date("Y-m-d"));
 
 loadTemplateView('dayRecordsView',
     [
         'today' => $today,
         'exception' => $exception,
-        'userWorkingHours' => $userWorkingHours,
+        'records' => $records,
     ]
 );
