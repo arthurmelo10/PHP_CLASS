@@ -69,6 +69,18 @@ class WorkingHours extends Model
 
     }
 
+    public function getLunchTime(): DateInterval
+    {
+        [, $t2, $t3,] = $this->getTimes();
+
+        $breakInterval = new DateInterval('PT0S');
+
+        if ($t2) $breakInterval = $t2->diff(new DateTime()); // pegar a diferença entre o a saída para o almoço e o horário atual
+        if ($t3) $breakInterval = $t2->diff($t3); // retorno do tempo de almoço de forma precisa
+
+        return $breakInterval;
+    }
+
     private function getTimes()
     {
         $times = [];
