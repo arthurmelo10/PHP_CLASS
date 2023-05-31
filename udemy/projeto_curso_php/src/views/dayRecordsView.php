@@ -1,7 +1,7 @@
 <main class="content">
     <?php
         renderTitle('Registrar Ponto', 'Mantenha seu pónto consistente!','icofont-check-alt');
-        include(TEMPLATE_PATH . "/messages.php")
+        include(TEMPLATE_PATH . "/messages.php");
     ?>
     <div class="card">
         <div class="card-header">
@@ -25,4 +25,16 @@
             </a>
         </div>
     </div>
+
+
+
+    <form class="mt-5" action="makeAppointmentController.php" method="post">
+        <div class="input-group no-border">
+            <input type="text" name="forcedTime" class="form-control"
+            placeholder="Informe a hora para simular o batimento">
+            <button class="btn btn-danger ml-3">
+                Simular Ponto
+            </button>
+        </div>
+    </form>
 </main>
