@@ -51,4 +51,41 @@ class WorkingHours extends Model
 
         return null;
     }
+
+
+    public function getWorkedInterval(): DateInterval
+    {
+        [$t1, $t2, $t3, $t4] = $this->getTimes();
+
+        $morning = new DateInterval('PT0S'); // parte da manhã
+        $afternoon = new DateInterval('PT0S'); // parte da tarde
+
+        if ($t1) $morning = $t1->diff(new DateTime()); // pegar a diferença entre o primeiro batimento e o horário atual
+        if ($t2) $morning = $t1->diff($t2);// pegar a diferença entre o primeiro e o segundo batimento
+        if ($t3) $afternoon = $t3->diff(new DateTime()); // pegar a diferença entre o primeiro batimento e o horário atual
+        if ($t4) $afternoon = $t3->diff($t4);// pegar a diferença entre o primeiro e o segundo batimento
+
+        return sumIntervals($morning, $afternoon);// somar os dois intervalos 
+
+    }
+
+    private function getTimes()
+    {
+        $times = [];
+
+        $this->time1
+        ? array_push($times, getDateFromString($this->time1))
+        : array_push($times, null);
+        $this->time2
+        ? array_push($times, getDateFromString($this->time2)) 
+        : array_push($times, null);
+        $this->time3
+        ? array_push($times, getDateFromString($this->time3))
+        : array_push($times, null);
+        $this->time4
+        ? array_push($times, getDateFromString($this->time4))
+        : array_push($times, null);
+
+        return $times;
+    }
 }
