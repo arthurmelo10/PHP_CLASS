@@ -36,11 +36,10 @@ class WorkingHours extends Model
         if (!$timeColumn) {
             throw new AppException("Você já fez todas as marcações");
         }
-
-        $this->$timeColumn = $time;
         
-        $this->id ? $this->update() : $this->insert();
+        $this->$timeColumn = $time;
 
+        $this->id ? $this->update() : $this->insert();
     }
 
     private function getNextAppointment()
