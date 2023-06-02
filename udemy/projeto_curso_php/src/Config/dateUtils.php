@@ -30,7 +30,7 @@ function getNextDay($date)
     return $inputDate;
 }
 
-function sumIntervals($interval1, $interval2)
+function sumIntervals($interval1, $interval2): DateInterval
 {
     $date = new DateTime('00:00:00');
     $date->add($interval1);
@@ -39,7 +39,7 @@ function sumIntervals($interval1, $interval2)
     return (new DateTime('00:00:00'))->diff($date);
 }
 
-function subtractIntervals($interval1, $interval2)
+function subtractIntervals($interval1, $interval2): DateInterval
 {
     $date = new DateTime('00:00:00');
     $date->add($interval1);

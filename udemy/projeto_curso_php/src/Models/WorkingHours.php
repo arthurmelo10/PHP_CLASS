@@ -42,17 +42,6 @@ class WorkingHours extends Model
         $this->id ? $this->update() : $this->insert();
     }
 
-    private function getNextAppointment()
-    {
-        if(!$this->time1) return 'time1';
-        if(!$this->time2) return 'time2';
-        if(!$this->time3) return 'time3';
-        if(!$this->time4) return 'time4';
-
-        return null;
-    }
-
-
     public function getWorkedInterval(): DateInterval
     {
         [$t1, $t2, $t3, $t4] = $this->getTimes();
@@ -73,12 +62,49 @@ class WorkingHours extends Model
     {
         [, $t2, $t3,] = $this->getTimes();
 
-        $breakInterval = new DateInterval('PT0S');
+        $lunchTime = new DateInterval('PT0S');
 
-        if ($t2) $breakInterval = $t2->diff(new DateTime()); // pegar a diferença entre o a saída para o almoço e o horário atual
-        if ($t3) $breakInterval = $t2->diff($t3); // retorno do tempo de almoço de forma precisa
+        if ($t2) $lunchTime = $t2->diff(new DateTime()); // pegar a diferença entre o a saída para o almoço e o horário atual
+        if ($t3) $lunchTime = $t2->diff($t3); // retorno do tempo de almoço de forma precisa
 
-        return $breakInterval;
+        return $lunchTime;
+    }
+
+    public function getExitTime(): mixed
+    {
+        [$t1,,, $t4] = $this->getTimes();
+
+        /**
+         * Periodo de trabalho de um colaborador
+         */
+        $workDay = DateInterval::createFromDateString('8 hours');
+        /**
+         * Periodo de almoço de um colaborador
+         */
+        $defaultLunchTime = DateInterval::createFromDateString('1 hour');
+
+        if (!$t1) {
+
+            return (new DateTime())->add($workDay)->add($defaultLunchTime);
+
+        } elseif ($t4) {
+            return $t4;
+
+        } else {
+            $lunchTime = $this->getLunchTime();
+            $total = sumIntervals($workDay,($lunchTime->format('%H:%I:%S') === "00:00:00" ? $defaultLunchTime : $lunchTime));
+            return $t1->add($total);
+        }
+    }
+
+    private function getNextAppointment()
+    {
+        if(!$this->time1) return 'time1';
+        if(!$this->time2) return 'time2';
+        if(!$this->time3) return 'time3';
+        if(!$this->time4) return 'time4';
+
+        return null;
     }
 
     private function getTimes()
