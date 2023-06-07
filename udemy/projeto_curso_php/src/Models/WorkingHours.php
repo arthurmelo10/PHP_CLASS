@@ -103,12 +103,13 @@ class WorkingHours extends Model
 
         if ($nextTime === 'time1' || $nextTime === 'time3') {
             return 'exitTime';
-        } elseif ($nextTime === 'time2' || $nextTime === 'time4') {
-            return 'workedInterval';
-        } else {
-            return null;
         }
 
+        if ($nextTime === 'time2' || $nextTime === 'time4') {
+            return 'workedInterval';
+        }
+
+        return null;
     }
 
     private function getNextAppointment()
