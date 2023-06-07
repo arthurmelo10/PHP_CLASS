@@ -101,16 +101,6 @@ class WorkingHours extends Model
     {
         $nextTime = $this->getNextAppointment();
 
-        //echo $nextTime;
-
-        // if ($nextTime === 'time1' || $nextTime = 'time3') {
-        //     return 'exitTime';
-        // }    
-
-        // if ($nextTime === 'time2' || $nextTime = 'time4') {
-        //     return 'workedInterval';
-        // }
-
         if ($nextTime === 'time1' || $nextTime === 'time3') {
             return 'exitTime';
         } elseif ($nextTime === 'time2' || $nextTime === 'time4') {
@@ -119,7 +109,6 @@ class WorkingHours extends Model
             return null;
         }
 
-//        return null;
     }
 
     private function getNextAppointment()
