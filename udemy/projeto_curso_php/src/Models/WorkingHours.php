@@ -97,6 +97,21 @@ class WorkingHours extends Model
         }
     }
 
+    public function getActiveClock(): ?string
+    {
+        $nextTime = $this->getNextAppointment();
+
+        if ($nextTime === 'time1' || $nextTime === 'time3') {
+            return 'exitTime';
+        }
+
+        if ($nextTime === 'time2' || $nextTime === 'time4') {
+            return 'workedInterval';
+        }
+
+        return null;
+    }
+
     private function getNextAppointment()
     {
         if(!$this->time1) return 'time1';
