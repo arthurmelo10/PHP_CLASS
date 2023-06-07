@@ -97,6 +97,31 @@ class WorkingHours extends Model
         }
     }
 
+    public function getActiveClock(): ?string
+    {
+        $nextTime = $this->getNextAppointment();
+
+        //echo $nextTime;
+
+        // if ($nextTime === 'time1' || $nextTime = 'time3') {
+        //     return 'exitTime';
+        // }    
+
+        // if ($nextTime === 'time2' || $nextTime = 'time4') {
+        //     return 'workedInterval';
+        // }
+
+        if ($nextTime === 'time1' || $nextTime === 'time3') {
+            return 'exitTime';
+        } elseif ($nextTime === 'time2' || $nextTime === 'time4') {
+            return 'workedInterval';
+        } else {
+            return null;
+        }
+
+//        return null;
+    }
+
     private function getNextAppointment()
     {
         if(!$this->time1) return 'time1';
