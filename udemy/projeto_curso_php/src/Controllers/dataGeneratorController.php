@@ -1,5 +1,4 @@
 <?php
-loadModel('WorkingHours');
 
 // Esses dois comandos fazem voltar o banco para a versão original => CUIDADO !!
 Database::executeSQL('DELETE FROM working_hours');

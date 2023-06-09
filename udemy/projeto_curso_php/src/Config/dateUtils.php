@@ -57,3 +57,18 @@ function getDateFromString(string $str)
 {
     return DateTimeImmutable::createFromFormat('H:i:s', $str);
 }
+
+
+function getFirstDayOfMonth ($date): DateTime
+{
+    $time = getDateAsDateTime($date)->getTimestamp();
+
+    return new DateTime(date('Y-m-1', $time));
+}
+
+function getLastDayOfMonth ($date): DateTime
+{
+    $time = getDateAsDateTime($date)->getTimestamp();
+
+    return new DateTime(date('Y-m-t', $time));
+}
