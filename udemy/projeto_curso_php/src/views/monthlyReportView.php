@@ -1,4 +1,9 @@
+<main class="content">
 <?php
-print_r($user);
-echo '<br>';
-print_r($registries);
+print_r($report);
+echo '<hr>';
+echo $sumOfWorkedTime;
+echo '<hr>';
+echo $balance;
+?>
+</main>

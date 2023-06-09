@@ -39,6 +39,8 @@ class WorkingHours extends Model
         
         $this->$timeColumn = $time;
 
+        $this->worked_time = getSecondsFromDateInterval($this->getWorkedInterval());
+
         $this->id ? $this->update() : $this->insert();
     }
 
@@ -122,9 +124,10 @@ class WorkingHours extends Model
         $result = static::getResultSetFromSelect(
             [
                 'user_id' => $userId,
-                'raw' => "work_date between $startDate AND $endDate",
+                'raw' => "work_date between '$startDate' AND '$endDate'",
             ]
         );
+
 
         if ($result) {
             while ($row = $result->fetch_assoc()) {
