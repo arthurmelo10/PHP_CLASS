@@ -48,12 +48,49 @@ function subtractIntervals($interval1, $interval2): DateInterval
     return (new DateTime('00:00:00'))->diff($date);
 }
 
-function getDateFromInterval($interval)
+function getDateFromInterval($interval): DateTimeImmutable
 {
     return new DateTimeImmutable($interval->format('%H:%i:%s'));
 }
 
-function getDateFromString(string $str)
+function getDateFromString(string $str): DateTimeImmutable
 {
     return DateTimeImmutable::createFromFormat('H:i:s', $str);
+}
+
+
+function getFirstDayOfMonth ($date): DateTime
+{
+    $time = getDateAsDateTime($date)->getTimestamp();
+
+    return new DateTime(date('Y-m-1', $time));
+}
+
+function getLastDayOfMonth ($date): DateTime
+{
+    $time = getDateAsDateTime($date)->getTimestamp();
+
+    return new DateTime(date('Y-m-t', $time));
+}
+
+function getSecondsFromDateInterval ($interval): int
+{
+    $d1 = new DateTimeImmutable();
+    $d2 = $d1->add($interval);
+
+    return $d2->getTimestamp() - $d1->getTimestamp();
+}
+
+function isValuableWorkDay($date): bool
+{
+    return !isWeekend($date) && isBefore($date, new DateTime());
+}
+
+function getTimeStringFromSeconds($seconds)
+{
+    $hora = intdiv($seconds, 3600);
+    $minuto = intdiv($seconds % 3600, 60);
+    $segundos = $seconds - ($hora * 3600) - ($minuto * 60);
+
+    return sprintf('%02d:%02d:%02d', $hora, $minuto, $segundos);
 }

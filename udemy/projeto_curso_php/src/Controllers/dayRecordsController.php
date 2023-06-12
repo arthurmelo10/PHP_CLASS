@@ -3,7 +3,6 @@ session_start();
 requireValidSession();
 $exception = null;
 
-loadModel('WorkingHours');
 
 $today = date("d/m/Y");
 

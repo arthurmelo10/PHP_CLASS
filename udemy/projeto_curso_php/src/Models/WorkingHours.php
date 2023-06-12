@@ -39,6 +39,8 @@ class WorkingHours extends Model
         
         $this->$timeColumn = $time;
 
+        $this->worked_time = getSecondsFromDateInterval($this->getWorkedInterval());
+
         $this->id ? $this->update() : $this->insert();
     }
 
@@ -110,6 +112,32 @@ class WorkingHours extends Model
         }
 
         return null;
+    }
+
+    public static function getMonthlyReport($userId, $date): array
+    {
+        $registries = [];
+
+        $startDate = getFirstDayOfMonth($date)->format('Y-m-d');
+        $endDate = getLastDayOfMonth($date)->format('Y-m-d');
+
+        $result = static::getResultSetFromSelect(
+            [
+                'user_id' => $userId,
+                'raw' => "work_date between '$startDate' AND '$endDate'",
+            ]
+        );
+
+
+        if ($result) {
+            while ($row = $result->fetch_assoc()) {
+                $registries[$row['work_date']] = new WorkingHours($row);
+            }
+        }
+
+        return $registries;
+
+
     }
 
     private function getNextAppointment()
