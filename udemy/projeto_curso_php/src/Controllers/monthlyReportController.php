@@ -16,12 +16,16 @@ $lastDay = getLastDayOfMonth($currentDate)->format('d');
 for ($day = 1; $day <= $lastDay; $day++) {
 
     $date = $currentDate->format('Y-m') . '-' . sprintf('%02d', $day);
-
-    if (!isWeekend($date) && isBefore($date, $currentDate)) {
-        if (array_key_exists($date, $registries)) {
-            $registry = $registries[$date];
-        }
+    
+    if (isWeekend($date) || !isBefore($date, $currentDate)) {
+        continue;
     }
+
+    if (!array_key_exists($date, $registries)) {
+            continue;
+    }
+
+    $registry = $registries[$date];
 
     if (isValuableWorkDay($date)) $workDay++;
 
