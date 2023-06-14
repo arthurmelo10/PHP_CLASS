@@ -21,7 +21,7 @@ for ($day = 1; $day <= $lastDay; $day++) {
     }
 
     if (!array_key_exists($date, $registries)) {
-            continue;
+        continue;
     }
 
     $registry = $registries[$date];
