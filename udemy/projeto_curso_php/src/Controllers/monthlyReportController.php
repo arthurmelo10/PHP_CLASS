@@ -3,7 +3,6 @@ session_start();
 requireValidSession();
 
 $currentDate = new DateTime();
-//$lastMonth = $currentDate->modify('-1 month')->format('Y-m-d');
 
 $user = $_SESSION['user'];
 
@@ -47,7 +46,7 @@ $sign = ($sumOfWorkedTime >= $expectedTime) ? '+' : '-';
 loadTemplateView('monthlyReportView',
     [
         'report' => $report,
-        'sumOfWorkedTime' => $sumOfWorkedTime,
+        'sumOfWorkedTime' => getTimeStringFromSeconds($sumOfWorkedTime),
         'balance' => "$sign $balance"
     ]
 );
