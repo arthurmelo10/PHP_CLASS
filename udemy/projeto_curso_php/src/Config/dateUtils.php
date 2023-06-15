@@ -94,3 +94,10 @@ function getTimeStringFromSeconds($seconds)
 
     return sprintf('%02d:%02d:%02d', $hora, $minuto, $segundos);
 }
+
+function formatDateWihtLocale($date, $pattern)
+{
+    $time = getDateAsDateTime($date);
+
+    return date_format($time, $pattern);
+}

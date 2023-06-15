@@ -136,8 +136,19 @@ class WorkingHours extends Model
         }
 
         return $registries;
+    }
 
+    public function getBalance()
+    {
+        if(!$this->time1 && !isValuableWorkDay($this->work_date)) return '';
 
+        if ($this->workedTime == DAILY_TIME) return '-';
+
+        $balance = $this->worked_time - DAILY_TIME;
+        $balanceString = getTimeStringFromSeconds(abs($balance));
+        $sign = $this->worked_time >= DAILY_TIME ? '+' : '-';
+
+        return "$sign $balanceString";
     }
 
     private function getNextAppointment()
