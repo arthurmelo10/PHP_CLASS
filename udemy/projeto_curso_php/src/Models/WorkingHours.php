@@ -151,6 +151,42 @@ class WorkingHours extends Model
         return "$sign $balanceString";
     }
 
+    public static function getAbsentUsers()
+    {
+        /**
+         * método para pegar os usuários ausentes
+         */
+        $today = new DateTime();
+        $result = Database::getResultFromQuery(
+            "SELECT name FROM users WHERE end_date is NULL and id NOT IN (
+                SELECT user_id FROM working_hours 
+                WHERE work_date = '{$today->format('Y-m-d')}'
+                AND time1 IS NOT NULL
+            )"
+        );
+
+        $absentUsers = [];
+
+        if ($result->num_rows > 0) {
+          while ($row= $result->fetch_assoc()) {
+            array_push($absentUsers, $row['name']);
+          }  
+        }
+
+        return $absentUsers;
+    }
+
+    public static function getWorkedTimeInMonth($date) {
+        $startDate = new DateTime("$date-1");
+        $endDate = getLastDayOfMonth("$date");
+
+        $result = static::getResultSetFromSelect([
+            'raw' => "work_date BETWEEN $startDate AND $endDate"
+        ], "sum(worked_date) as sum");
+
+        return $result->fetch_assoc()['sum'];
+    }
+
     private function getNextAppointment()
     {
         if(!$this->time1) return 'time1';
