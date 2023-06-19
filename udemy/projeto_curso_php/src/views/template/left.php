@@ -10,11 +10,11 @@
             <li class="nav-item">
                 <a href="monthlyReportController.php">
                     <i class="icofont-ui-calendar mr-2"></i>
-                    Registrar Mensal
+                    Relatório Mensal
                 </a>
             </li>
             <li class="nav-item">
-                <a href=".php">
+                <a href="managerReportController.php">
                     <i class="icofont-chart-histogram mr-2"></i>
                     Relatório Gerencial
                 </a>
