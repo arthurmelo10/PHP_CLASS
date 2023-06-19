@@ -176,13 +176,13 @@ class WorkingHours extends Model
         return $absentUsers;
     }
 
-    public static function getWorkedTimeInMonth($date) {
-        $startDate = new DateTime("$date-1");
-        $endDate = getLastDayOfMonth("$date");
+    public static function getWorkedTimeInMonth(string $date) {
+        $startDate = getFirstDayOfMonth($date)->format('Y-m-d');
+        $endDate = getLastDayOfMonth($date)->format('Y-m-t');
 
         $result = static::getResultSetFromSelect([
-            'raw' => "work_date BETWEEN $startDate AND $endDate"
-        ], "sum(worked_date) as sum");
+            'raw' => "work_date BETWEEN '$startDate' AND '$endDate'"
+        ], "sum(worked_time) as sum");
 
         return $result->fetch_assoc()['sum'];
     }
