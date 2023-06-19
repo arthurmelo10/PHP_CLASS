@@ -15,7 +15,5 @@ $hours = explode(':', getTimeStringFromSeconds($seconds))[0];
 loadTemplateView('managerReportView',[
     'activeUsers' => $activeUsers,
     'absentUsers' => $absentUsers,
-    'date' => $date,
-    'seconds' => $seconds,
     'hours' => $hours,
 ]);
