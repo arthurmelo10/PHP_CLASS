@@ -14,7 +14,7 @@
                 <label for="name">Nome</label>
                 <input type="text" id="name" name="name" placeholder="Informe o Nome"
                     class="form-control <?= isset($errors['name']) ?  'is-invaild' : '' ?>"
-                    <?= $name ?>>
+                    value="<?= $name ?? "" ?>">
                 <div class = "invalid-feedback">
                     <?= $errors['name'] ?>
                 </div>
@@ -23,7 +23,7 @@
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" placeholder="Informe o E-mail"
                     class="form-control <?= isset($errors['email']) ?  'is-invaild' : '' ?>"
-                    <?= $email ?>>
+                    value="<?= $email ?? "" ?>">
                 <div class = "invalid-feedback">
                     <?= $errors['email'] ?>
                 </div>
@@ -52,7 +52,7 @@
                 <label for="start_date">Data de Admissão</label>
                 <input type="date" id="start_date" name="start_date"
                     class="form-control <?= isset($errors['start_date']) ?  'is-invaild' : '' ?>"
-                    value="<?= $start_date ?>">
+                    value="<?= $start_date ?? "" ?>">
                 <div class = "invalid-feedback">
                     <?= $errors['start_date'] ?>
                 </div>
@@ -61,7 +61,7 @@
                 <label for="end_date">Data de Admissão</label>
                 <input type="date" id="end_date" name="end_date"
                     class="form-control <?= isset($errors['end_date']) ?  'is-invaild' : '' ?>"
-                    value="<?= $end_date ?>">
+                    value="<?= $end_date ?? "" ?>">
                 <div class = "invalid-feedback">
                     <?= $errors['end_date'] ?>
                 </div>
