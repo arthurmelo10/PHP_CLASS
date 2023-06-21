@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="form-group col-md-6">
-                <label for="end_date">Data de Admissão</label>
+                <label for="end_date">Data de Desligamento</label>
                 <input type="date" id="end_date" name="end_date"
                     class="form-control <?= isset($errors['end_date']) ?  'is-invaild' : '' ?>"
                     value="<?= $end_date ?? "" ?>">
