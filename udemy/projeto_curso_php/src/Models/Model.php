@@ -6,16 +6,24 @@ Class Model
     protected static array $columns = [];
     protected array $values = [];
 
-    public function __construct(array $arr)
+    public function __construct(array $arr, $sanitize = true)
     {
-        $this->loadFromArray($arr);
+        $this->loadFromArray($arr, $sanitize);
     }
 
-    public function loadFromArray(array $arr)
+    public function loadFromArray(array $arr, $sanitize = true)
     {
         if ($arr) {
             foreach ($arr as $key => $value) {
-                $this->$key = $value;
+
+                $cleanValue = $value;
+
+                if ($sanitize && isset($cleanValue)) {
+                    $cleanValue = strip_tags(trim($cleanValue)); // retira as tags php e html
+                    $cleanValue = htmlentities($cleanValue,ENT_NOQUOTES);
+                }
+
+                $this->$key = $cleanValue;
             }
         }   
     }
