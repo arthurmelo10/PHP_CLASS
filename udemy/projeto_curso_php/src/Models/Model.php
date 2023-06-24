@@ -11,23 +11,6 @@ Class Model
         $this->loadFromArray($arr, $sanitize);
     }
 
-    public function loadFromArray(array $arr, $sanitize = true)
-    {
-        if ($arr) {
-            foreach ($arr as $key => $value) {
-
-                $cleanValue = $value;
-
-                if ($sanitize && isset($cleanValue)) {
-                    $cleanValue = strip_tags(trim($cleanValue)); // retira as tags php e html
-                    $cleanValue = htmlentities($cleanValue,ENT_NOQUOTES);
-                }
-
-                $this->$key = $cleanValue;
-            }
-        }   
-    }
-
     /**
      * @return mixed
      */
@@ -122,6 +105,23 @@ Class Model
         $result = static::getResultSetFromSelect($filters, 'count(*) as count');
 
         return $result->fetch_assoc()['count'];
+    }
+
+    private function loadFromArray(array $arr, $sanitize = true): void
+    {
+        if ($arr) {
+            foreach ($arr as $key => $value) {
+
+                $cleanValue = $value;
+
+                if ($sanitize && isset($cleanValue)) {
+                    $cleanValue = strip_tags(trim($cleanValue)); // retira as tags php e html
+                    $cleanValue = htmlentities($cleanValue,ENT_NOQUOTES);
+                }
+
+                $this->$key = $cleanValue;
+            }
+        }
     }
 
     private static function getFilters($filters)
