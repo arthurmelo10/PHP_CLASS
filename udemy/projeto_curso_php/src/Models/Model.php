@@ -24,6 +24,11 @@ Class Model
         $this->values[$key] = $value;
     }
 
+    public function getValues()
+    {
+        return $this->values;
+    }
+
     public static function get(array $filters = [], string $columns = '*')
     {
         $objects = [];

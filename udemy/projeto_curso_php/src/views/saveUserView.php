@@ -10,6 +10,7 @@
     ?>
 
     <form action="#" method="post">
+        <input type="hidden" name="id" value="<?= $id ?? null ?>">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="name">Nome</label>
@@ -83,6 +84,8 @@
             <button class="btn btn-primary btn-lg">Salvar</button>
             <a href="/userController.php"
             class="btn btn-secondary btn-lg">Cancelar</a>
+            <a href="/userController.php"
+            class="btn btn-info btn-lg">Voltar</a>
         </div>
     </form>
 </main>
