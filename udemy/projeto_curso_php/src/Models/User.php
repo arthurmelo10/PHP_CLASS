@@ -50,12 +50,10 @@ class User extends Model
          $errors = [];
 
          if (!$this->name) {
-            // print_r($errors);
             $errors['name'] = 'Nome é um campo obrigatório.';
          }
 
          if (!$this->email) {
-            //print_r($errors);
             $errors['email'] = 'Email é um campo obrigatório.';
          } 
          
