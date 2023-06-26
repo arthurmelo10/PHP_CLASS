@@ -6,18 +6,9 @@ Class Model
     protected static array $columns = [];
     protected array $values = [];
 
-    public function __construct(array $arr)
+    public function __construct(array $arr, $sanitize = true)
     {
-        $this->loadFromArray($arr);
-    }
-
-    public function loadFromArray(array $arr)
-    {
-        if ($arr) {
-            foreach ($arr as $key => $value) {
-                $this->$key = $value;
-            }
-        }   
+        $this->loadFromArray($arr, $sanitize);
     }
 
     /**
@@ -31,6 +22,11 @@ Class Model
     public function __set($key, $value): void
     {
         $this->values[$key] = $value;
+    }
+
+    public function getValues()
+    {
+        return $this->values;
     }
 
     public static function get(array $filters = [], string $columns = '*')
@@ -102,11 +98,35 @@ Class Model
         Database::executeSQL($sql);
     }
 
+    public static function deleteById($id)
+    {
+        $sql = "DELETE FROM " . static::$tableName . " WHERE id = {$id}";
+        
+        Database::executeSQL($sql);
+    }
+
     public static function getCount($filters = [])
     {
         $result = static::getResultSetFromSelect($filters, 'count(*) as count');
 
         return $result->fetch_assoc()['count'];
+    }
+
+    private function loadFromArray(array $arr, $sanitize = true): void
+    {
+        if ($arr) {
+            foreach ($arr as $key => $value) {
+
+                $cleanValue = $value;
+
+                if ($sanitize && isset($cleanValue)) {
+                    $cleanValue = strip_tags(trim($cleanValue)); // retira as tags php e html
+                    $cleanValue = htmlentities($cleanValue,ENT_NOQUOTES);
+                }
+
+                $this->$key = $cleanValue;
+            }
+        }
     }
 
     private static function getFilters($filters)
