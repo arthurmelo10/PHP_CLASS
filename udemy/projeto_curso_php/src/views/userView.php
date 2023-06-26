@@ -23,7 +23,7 @@
             <?php foreach ($users as $user): ?>
                 <tr>
                     <td><?=$user->name?></td>
-                    <td><?= $user->email?></td>
+                    <td><?=$user->email?></td>
                     <td><?=$user->start_date?></td>
                     <td><?=$user->end_date ?? "---"?></td>
                     <td>
