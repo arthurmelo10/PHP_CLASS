@@ -3,7 +3,7 @@
  * Listar usuários
  */
 session_start();
-requireValidSession();
+requireValidSession(true);
 $exception = null;
 $users = User::get();
 
