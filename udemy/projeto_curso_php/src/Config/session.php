@@ -11,7 +11,7 @@ function requireValidSession($requiresAdmin = false) {
 
     if ($requiresAdmin && !$user->is_admin) {
         addErrorMessage('Acesso negado');
-        header('Location: dayRecordsController.php');
+        // header('Location: dayRecordsController.php');
         exit();
     }
 }
