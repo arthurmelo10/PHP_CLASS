@@ -1,3 +1,47 @@
+name: Atualization of main
+
+on: 
+  merge:
+    branch: 
+      - develop
+
+
+jobs:
+
+  welcome:
+    name: Welcome
+    runs-on: ubuntu-latest
+    steps:
+      - name: Welcome
+        run: echo "Hello World
+
+  setup:
+    name: Setup
+    needs: [Welcome]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign author to issue
+        uses: technote-space/assign-author@v1
+
+      - name: Get action link
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            You can track the action execution in [here](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}).
+
+  # merge-branch:
+  #   name: update main branch
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout do Repositório
+  #       uses: actions/checkout@v3
+
+  #     - name: Config Git
+  #       run: |
+  #         git config --global user.mail "robot@github.com"
+  #         git config --global user.name "Main Robot"
+  #         git fetch --all
 
   #     - name: Merge on main
   #       run: |
