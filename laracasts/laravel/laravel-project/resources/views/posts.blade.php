@@ -8,21 +8,21 @@
 </head>
     <body>
         <article>
-            <h1><a href="/post">My First Post</a></h1>
+            <h1><a href="/posts/my-first-post">My First Post</a></h1>
             <p>
                 Texto do primeiro post !!!
             </p>
         </article>
         
         <article>
-        <h1><a href="/post">My Second Post</a></h1>
+        <h1><a href="/posts/my-second-post">My Second Post</a></h1>
             <p>
                 Texto do segundo post !!!
             </p>
         </article>
 
         <article>
-        <h1><a href="/post">My Third Post</a></h1>
+        <h1><a href="/posts/my-third-post">My Third Post</a></h1>
             <p>
                 Texto do terceiro post !!!
             </p>
