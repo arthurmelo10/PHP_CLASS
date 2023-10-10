@@ -17,7 +17,6 @@ jobs:
 
   setup:
     name: Setup
-    needs: [welcome]
     runs-on: ubuntu-latest
     steps:
       - name: Assign author to issue
