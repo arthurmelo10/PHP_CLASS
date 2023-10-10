@@ -8,12 +8,12 @@ on:
 
 jobs:
 
-  welcome:
-    name: Welcome
-    runs-on: ubuntu-latest
-    steps:
-      - name: Welcome
-        run: echo "Hello World
+  # welcome:
+  #   name: Welcome
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Welcome
+  #       run: echo "Hello World
 
   setup:
     name: Setup
