@@ -8,29 +8,30 @@ on:
 
 jobs:
 
-  # welcome:
-  #   name: Welcome
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Welcome
-  #       run: echo "Hello World
-
-  setup:
-    name: Setup
-    needs: [welcome]
+  welcome:
+    name: Welcome
     runs-on: ubuntu-latest
     steps:
-      - name: Assign author to issue
-        uses: technote-space/assign-author@v1
+      - name: Welcome
+        run:
+          echo "Hello World"
 
-      - name: Get action link
-        uses: peter-evans/create-or-update-comment@v2
-        with:
-          body: |
-            You can track the action execution in [here](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}).
+  # setup:
+  #   name: Setup
+  #   runs-on: ubuntu-latest
+  #   needs: [welcome]
+  #   steps:
+  #     - name: Assign author to issue
+  #       uses: technote-space/assign-author@v1
+
+  #     - name: Get action link
+  #       uses: peter-evans/create-or-update-comment@v2
+  #       with:
+  #         body: |
+  #           You can track the action execution in [here](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}).
 
   merge-branch:
-    name: update main branch
+    name: Update Main Branch
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do Repositório
@@ -44,6 +45,11 @@ jobs:
 
       - name: Merge on main
         run: |
+          git checkout develop
+          git pull origin develop
           git checkout main
+          git pull origin main
           git merge develop
           git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
