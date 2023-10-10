@@ -48,6 +48,7 @@ jobs:
           git checkout develop
           git pull origin develop
           git checkout main
+          git pull origin main
           git merge develop
           git push origin main
         env:
