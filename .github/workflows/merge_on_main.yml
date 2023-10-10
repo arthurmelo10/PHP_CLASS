@@ -15,8 +15,8 @@ jobs:
         run:
           echo "Hello World"
       
-      - name: Assign author to issue
-        uses: technote-space/assign-author@v1
+      # - name: Assign author to issue
+      #   uses: technote-space/assign-author@v1
 
   merge-branch:
     name: Update Main Branch
