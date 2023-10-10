@@ -39,6 +39,6 @@ jobs:
           git checkout main
           git pull origin main
           git merge --allow-unrelated-histories develop
-          git push origin main
+          git push --force origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
