@@ -1,45 +1,45 @@
 name: Atualization of Main Branch
 
 on: 
-  push:
-    branches:
-      - develop
+  issues:
+    types: opened
+
+concurrency:
+  group: 'atualization-main'
 
 jobs:
+    welcome:
+      if: contains(github.event.issue.labels.*.name, 'atualization-main')
+      name: Welcome
+      runs-on: ubuntu-latest
+      steps:
+        - name: Welcome
+          run:
+            echo "Hello World"
+        
+        - name: Assign author to issue
+          uses: technote-space/assign-author@v1
 
-  welcome:
-    name: Welcome
-    runs-on: ubuntu-latest
-    steps:
-      - name: Welcome
-        run:
-          echo "Hello World"
-      
-      - name: Assign author to issue
-        uses: technote-space/assign-author@v1
+        - name: Save pipeline link on issue
+          uses: peter-evans/create-or-update-comment@v2
+          with:
+            issue-number: ${{ github.event.issue.number }}
+            body: |
+              You can track the action execution in [${{ github.run_id }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
-  merge-branch:
-    name: Update Main Branch
-    runs-on: ubuntu-latest
-    needs: [welcome]
-    steps:
-      - name: Checkout do Repositório
-        uses: actions/checkout@v3
+    open-pull-request:
+      name: Open Pull Request to Main
+      runs-on: ubuntu-latest
+      needs: [welcome]
+      steps:
+        - name: Checkout do Repositório
+          uses: actions/checkout@v3
 
-      - name: Config Git
-        run: |
-          git config --global user.mail "robot@github.com"
-          git config --global user.name "Main Robot"
-          git fetch --all
-
-      - name: Merge on Main
-        run: |
-          git checkout develop
-          git pull origin develop
-          git checkout main
-          git pull origin main
-          git merge --allow-unrelated-histories develop
-          git push --force origin main
-
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        - name: Open Pull Request
+          uses: peter-evans/create-pull-request@v3
+          with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+            title: Atualization of Main Branch
+            body: Atualization of main branch, with new develop
+            branch: develop
+            base: main
