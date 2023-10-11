@@ -15,8 +15,8 @@ jobs:
         run:
           echo "Hello World"
       
-      # - name: Assign author to issue
-      #   uses: technote-space/assign-author@v1
+      - name: Assign author to issue
+        uses: technote-space/assign-author@v1
 
   merge-branch:
     name: Update Main Branch
@@ -32,7 +32,7 @@ jobs:
           git config --global user.name "Main Robot"
           git fetch --all
 
-      - name: Merge on main
+      - name: Merge on Main
         run: |
           git checkout develop
           git pull origin develop
@@ -40,5 +40,6 @@ jobs:
           git pull origin main
           git merge --allow-unrelated-histories develop
           git push --force origin main
+
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
