@@ -31,12 +31,15 @@ jobs:
       name: Open Pull Request to Main
       runs-on: ubuntu-latest
       needs: [welcome]
+      outputs:
+        link: ${{steps.pull-request.outputs.pull-request-url}}
       steps:
         - name: Checkout do Repositório
           uses: actions/checkout@v3
 
         - name: Open Pull Request
           uses: peter-evans/create-pull-request@v3
+          id: pull-request
           with:
             token: ${{ secrets.GITHUB_TOKEN }}
             title: Atualization of Main Branch
