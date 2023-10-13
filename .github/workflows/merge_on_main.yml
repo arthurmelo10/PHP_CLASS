@@ -1,4 +1,4 @@
-name: Atualization of Main Branch by PR from develop
+name: Atualization of Main Branch
 
 on: 
   issues:
