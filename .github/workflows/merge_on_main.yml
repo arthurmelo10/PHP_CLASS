@@ -17,8 +17,8 @@ jobs:
           run:
             echo "Hello World"
         
-        # - name: Assign author to issue
-        #   uses: technote-space/assign-author@v1
+        - name: Assign author to issue
+          uses: technote-space/assign-author@v1
 
         - name: Save pipeline link on issue
           uses: peter-evans/create-or-update-comment@v2
@@ -43,3 +43,12 @@ jobs:
             body: Atualization of main branch, with new develop
             branch: develop
             base: main
+
+        - name: Close issue with Failure
+          uses: peter-evans/close-issue@v2
+          if: failure() && !cancelled()
+          with:
+            issue-number: ${{github.event.issue.number}}
+            comment: |
+              ## Automation Failed :sob:
+              You can view all the logs [here](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}).
