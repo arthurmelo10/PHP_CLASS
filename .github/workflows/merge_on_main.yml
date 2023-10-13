@@ -1,4 +1,4 @@
-name: Atualization of Main Branch
+name: Atualization of Main Branch by PR from develop
 
 on: 
   issues:
@@ -43,3 +43,25 @@ jobs:
             body: Atualization of main branch, with new develop
             branch: develop
             base: main
+
+        - name: Close issue with Failure
+          uses: peter-evans/close-issue@v2
+          if: failure() && !cancelled()
+          with:
+            issue-number: ${{github.event.issue.number}}
+            comment: |
+              ## Automation Failed :sob:
+              You can view all the logs [here](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}).
+
+    close-issue-with-success:
+      if: success() && !cancelled()
+      name: Close Issue
+      needs: [welcome, open-pull-request]
+      runs-on: ubuntu-latest
+      steps:
+        - name: Close Issue with success
+          uses: peter-evans/close-issue@v2
+          with:
+            issue-number: ${{ github.event.issue.number }}
+            comment: |
+              ## PR is open :rocket:
