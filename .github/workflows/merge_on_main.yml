@@ -65,3 +65,5 @@ jobs:
             issue-number: ${{ github.event.issue.number }}
             comment: |
               ## PR is open :rocket:
+
+              [here](${{needs.open-pull-request.outputs.link}})
