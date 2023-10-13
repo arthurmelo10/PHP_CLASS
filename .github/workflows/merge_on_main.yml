@@ -17,8 +17,8 @@ jobs:
           run:
             echo "Hello World"
         
-        - name: Assign author to issue
-          uses: technote-space/assign-author@v1
+        # - name: Assign author to issue
+        #   uses: technote-space/assign-author@v1
 
         - name: Save pipeline link on issue
           uses: peter-evans/create-or-update-comment@v2
