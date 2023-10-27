@@ -11,7 +11,7 @@
                 <?=$post->title;?>
             </h1>
             <div>
-                {{$post->body}}
+                {!! $post->body !!}
             </div>
         </article>
         <div style="margin-top: 1rem;">
