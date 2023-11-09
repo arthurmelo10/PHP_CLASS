@@ -13,11 +13,17 @@ class Post extends Model
         'slug',
         'title',
         'excerpt',
-        'body'
+        'body',
+        'category_id'
     ];
 
-    public function getRouteKeyName()
+    public function getRouteKeyName(): string
     {
         return 'slug';
+    }
+
+    public function category() 
+    {
+        return $this->belongsTo(Category::class);
     }
 }
