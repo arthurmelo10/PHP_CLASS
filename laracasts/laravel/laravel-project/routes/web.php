@@ -2,9 +2,7 @@
 
 use App\Models\Category;
 use App\Models\Post;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
-use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +17,7 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 Route::get('/', function () {
     
-    $posts = Post::all();
+    $posts = Post::with('category')->get();
     
     return view('posts',[
         'posts' => $posts
