@@ -15,7 +15,8 @@ class Post extends Model
         'title',
         'excerpt',
         'body',
-        'category_id'
+        'category_id',
+        'user_id'
     ];
 
     public function getRouteKeyName(): string
@@ -26,5 +27,10 @@ class Post extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+    
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 }
