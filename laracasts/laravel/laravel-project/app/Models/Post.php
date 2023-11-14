@@ -10,6 +10,9 @@ class Post extends Model
 {
     use HasFactory; 
 
+    /**
+     * array
+     */
     protected $fillable = [
         'slug',
         'title',
@@ -17,6 +20,14 @@ class Post extends Model
         'body',
         'category_id',
         'user_id'
+    ];
+
+    /**
+     * array
+     */
+    protected $with = [
+        'category', 
+        'author'
     ];
 
     public function getRouteKeyName(): string
