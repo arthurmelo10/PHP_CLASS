@@ -1,9 +1,9 @@
 <?php
 
+use App\Models\Category;
 use App\Models\Post;
-use Illuminate\Support\Facades\File;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
-use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,20 +18,33 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 Route::get('/', function () {
     
-    $posts = Post::all();
+    $posts = Post::latest()->get();
     
     return view('posts',[
         'posts' => $posts
     ]);
 });
 
-Route::get('posts/{post}', function ($slug) {
-
-    $post = Post::findOrFail($slug);
+Route::get('posts/{post}', function (Post $post) { //Post::where('slug', $post)->firstorFail()
 
     return view('post',
         [
             'post'=> $post
         ]
     );
+});
+
+
+Route::get('categories/{category}', function (Category $category) {
+
+    return view('posts', [
+        'posts' => $category->posts
+    ]);
+});
+
+Route::get('authors/{author}', function (User $author) {
+
+    return view('posts', [
+        'posts' => $author->posts
+    ]);
 });
