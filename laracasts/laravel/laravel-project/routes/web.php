@@ -19,9 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     
     $posts = Post::latest()->get();
+    $categories = Category::all();
     
     return view('posts',[
-        'posts' => $posts
+        'posts' => $posts,
+        'categories' => $categories
     ]);
 });
 
@@ -37,8 +39,12 @@ Route::get('posts/{post}', function (Post $post) { //Post::where('slug', $post)-
 
 Route::get('categories/{category}', function (Category $category) {
 
+    $categories = Category::all();
+
     return view('posts', [
-        'posts' => $category->posts
+        'posts' => $category->posts,
+        'currentCategory' => $category,
+        'categories' => $categories
     ]);
 });
 
