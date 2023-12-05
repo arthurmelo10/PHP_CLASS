@@ -25,7 +25,7 @@ Route::get('/', function () {
         'posts' => $posts,
         'categories' => $categories
     ]);
-});
+})->name('home');
 
 Route::get('posts/{post}', function (Post $post) { //Post::where('slug', $post)->firstorFail()
 
@@ -46,7 +46,7 @@ Route::get('categories/{category}', function (Category $category) {
         'currentCategory' => $category,
         'categories' => $categories
     ]);
-});
+})->name('category');
 
 Route::get('authors/{author}', function (User $author) {
 
