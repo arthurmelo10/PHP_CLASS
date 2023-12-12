@@ -17,12 +17,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    
-    $posts = Post::latest()->get();
+    // dd(request('search'));
+
+    $posts = Post::latest();
+
+    if (request('search')) {
+        // search the database
+        $posts
+            ->where('title', 'like', '%' . request('search') . '%')
+            ->orwhere('body', 'like', '%' . request('search') . '%');
+    }
+
     $categories = Category::all();
     
     return view('posts',[
-        'posts' => $posts,
+        'posts' => $posts->get(),
         'categories' => $categories
     ]);
 })->name('home');
