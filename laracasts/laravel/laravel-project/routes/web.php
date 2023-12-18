@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
@@ -16,41 +19,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    
-    $posts = Post::latest()->get();
-    $categories = Category::all();
-    
-    return view('posts',[
-        'posts' => $posts,
-        'categories' => $categories
-    ]);
-})->name('home');
+Route::get('/', [PostController::class, 'index'])->name('home');
 
-Route::get('posts/{post}', function (Post $post) { //Post::where('slug', $post)->firstorFail()
-
-    return view('post',
-        [
-            'post'=> $post
-        ]
-    );
-});
+Route::get('posts/{post}', [PostController::class, 'show']);
 
 
-Route::get('categories/{category}', function (Category $category) {
+Route::get('categories/{category}', [CategoryController::class , 'listAllCategories'])->name('category');
 
-    $categories = Category::all();
-
-    return view('posts', [
-        'posts' => $category->posts,
-        'currentCategory' => $category,
-        'categories' => $categories
-    ]);
-})->name('category');
-
-Route::get('authors/{author}', function (User $author) {
-
-    return view('posts', [
-        'posts' => $author->posts
-    ]);
-});
+Route::get('authors/{author}', [UserController::class, 'getAuthor']);
