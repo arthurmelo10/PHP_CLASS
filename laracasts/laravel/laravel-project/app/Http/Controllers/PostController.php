@@ -11,18 +11,16 @@ class PostController extends Controller
 {
     public function index(): View|Factory
     {
-        $posts = Post::latest()->filter(request(['search']))->get();
-        $categories = Category::all();
+        $posts = Post::latest()->filter(request(['search', 'category']))->get();
 
-        return view('posts', [
+        return view('posts.index', [
             'posts' => $posts,
-            'categories' => $categories
         ]);
     }
 
     public function show(Post $post) 
     {
-        return view('post',
+        return view('posts.show',
         [
             'post'=> $post
         ]);
