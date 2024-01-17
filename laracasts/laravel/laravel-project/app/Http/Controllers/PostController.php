@@ -11,7 +11,7 @@ class PostController extends Controller
 {
     public function index(): View|Factory
     {
-        $posts = Post::latest()->filter(request(['search', 'category']))->get();
+        $posts = Post::latest()->filter(request(['search', 'category', 'author']))->get();
 
         return view('posts.index', [
             'posts' => $posts,
