@@ -37,19 +37,12 @@ class Post extends Model
 
     public function scopeFilter($query, array $filters)
     {
-        $query->when($filters['search'] ?? false, fn ($query, $search) =>
-            $query
-                ->where('title', 'like', '%' . $search. '%')
-                ->orwhere('body', 'like', '%' . $search . '%'));
+        $this->getQueryForSearch($query, $filters);
+
+        $this->getQueryForCategory($query, $filters);
                 
-        $query->when($filters['category'] ?? false, fn ($query, $category) =>
-            $query->whereHas('category', fn($query) => 
-                $query->where('slug', $category)));  
-                
-        $query->when($filters['author'] ?? false, fn ($query, $author) =>
-            $query->whereHas('author', fn($query) => 
-                $query->where('username', $author)));  
-}
+        $this->getQueryForAuthor($query, $filters);
+    }
 
     public function category(): BelongsTo
     {
@@ -59,5 +52,27 @@ class Post extends Model
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    private function getQueryForSearch($query, array $filters): void
+    {
+        $query->when($filters['search'] ?? false, fn ($query, $search) =>
+            $query
+                ->where('title', 'like', '%' . $search. '%')
+                ->orwhere('body', 'like', '%' . $search . '%'));
+    }
+
+    private function getQueryForCategory($query, array $filters): void
+    {
+        $query->when($filters['category'] ?? false, fn ($query, $category) =>
+            $query->whereHas('category', fn($query) =>
+                $query->where('slug', $category)));
+    }
+
+    private function getQueryForAuthor($query, array $filters): void
+    {
+        $query->when($filters['author'] ?? false, fn ($query, $author) =>
+            $query->whereHas('author', fn($query) =>
+                $query->where('username', $author)));
     }
 }
