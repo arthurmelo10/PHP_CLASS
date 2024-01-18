@@ -57,9 +57,11 @@ class Post extends Model
     private function getQueryForSearch($query, array $filters): void
     {
         $query->when($filters['search'] ?? false, fn ($query, $search) =>
-            $query
-                ->where('title', 'like', '%' . $search. '%')
-                ->orwhere('body', 'like', '%' . $search . '%'));
+            $query->where( fn($query) =>
+                $query->where('title', 'like', '%' . $search. '%')
+                ->orwhere('body', 'like', '%' . $search . '%')
+                )
+            );
     }
 
     private function getQueryForCategory($query, array $filters): void
