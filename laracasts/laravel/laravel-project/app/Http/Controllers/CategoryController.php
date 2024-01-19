@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
@@ -11,7 +10,7 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
     
-        return view('posts', [
+        return view('posts.index', [
             'posts' => $category->posts,
             'currentCategory' => $category,
             'categories' => $categories
