@@ -9,22 +9,18 @@ use Illuminate\View\Component;
 
 class CategoryDropdown extends Component
 {
-    /**
-     * Create a new component instance.
-     */
-    public function __construct()
-    {
-        //
-    }
 
     /**
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string
     {
+        $categories = Category::all();
+        $currentCategory = Category::firstWhere('slug', request('category'));
+
         return view('components.category-dropdown',[
-            'categories' => Category::all(),
-            'currentCategory' => Category::firstWhere('slug', request('category'))
+            'categories' => $categories,
+            'currentCategory' => $currentCategory
         ]);
     }
 }
