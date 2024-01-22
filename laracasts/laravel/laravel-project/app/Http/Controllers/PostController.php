@@ -9,7 +9,7 @@ use Illuminate\Contracts\View\View;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(): View|Factory
     {
         $posts = Post::latest()->filter(
             request(['search', 'category', 'author'])
