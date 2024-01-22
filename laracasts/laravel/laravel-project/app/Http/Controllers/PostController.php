@@ -9,9 +9,11 @@ use Illuminate\Contracts\View\View;
 
 class PostController extends Controller
 {
-    public function index(): View|Factory
+    public function index()
     {
-        $posts = Post::latest()->filter(request(['search', 'category', 'author']))->get();
+        $posts = Post::latest()->filter(
+            request(['search', 'category', 'author'])
+            )->paginate(3)->withQueryString();
 
         return view('posts.index', [
             'posts' => $posts,
