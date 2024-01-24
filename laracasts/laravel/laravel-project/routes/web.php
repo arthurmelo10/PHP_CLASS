@@ -25,6 +25,7 @@ Route::get('categories/{category}', [CategoryController::class , 'listAllCategor
 
 Route::get('authors/{author}', [UserController::class, 'getAuthor']);
 
+// Registration
 Route::get('register', [RegisterController::class, 'create']);
 
 Route::post('register', [RegisterController::class, 'store']);
