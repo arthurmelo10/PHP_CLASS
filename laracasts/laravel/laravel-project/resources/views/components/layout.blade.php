@@ -67,4 +67,7 @@
             </div>
         </footer>
     </section>
+
+    <x-flash/>
+
 </body>
