@@ -42,12 +42,11 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
     ];
 
     public function setPasswordAttribute($password): void
     {
-        $this->atributes['passowrd'] = bcrypt($password);
+        $this->attributes['password'] = bcrypt($password);
     }
 
     public function posts(): HasMany
