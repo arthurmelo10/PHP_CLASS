@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,8 @@ Route::get('categories/{category}', [CategoryController::class , 'listAllCategor
 Route::get('authors/{author}', [UserController::class, 'getAuthor']);
 
 // Registration
-Route::get('register', [RegisterController::class, 'create']);
+Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 
-Route::post('register', [RegisterController::class, 'store']);
+Route::post('register', [RegisterController::class, 'store'])->middleware(('guest'));
+
+Route::post('logout', [SessionController::class, 'destroy']);
