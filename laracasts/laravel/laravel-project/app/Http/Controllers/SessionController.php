@@ -20,12 +20,13 @@ class SessionController extends Controller
             ]
         );
 
-        if (auth()->attempt($attributes)) {
-            session()->regenerate();
-            return redirect('/')->with('success', 'Welcome Back!');
+        if (!auth()->attempt($attributes)) {
+            throw ValidationException::withMessages(['email' =>'Your provided credentials coud not be verified']);
         }
 
-        throw ValidationException::withMessages(['email' =>'Your provided credentials coud not be verified']);
+        session()->regenerate();
+
+        return redirect('/')->with('success', 'Welcome Back!');
     }
     
     public function destroy()
