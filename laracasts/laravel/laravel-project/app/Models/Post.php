@@ -45,7 +45,7 @@ class Post extends Model
         $this->getQueryForAuthor($query, $filters);
     }
 
-    public function comment(): HasMany
+    public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
     }
