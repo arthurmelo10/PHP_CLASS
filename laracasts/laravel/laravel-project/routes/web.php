@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PostCommentsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
@@ -19,22 +20,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('ping', function() {
-    $mailchimp = new MailchimpMarketing\ApiClient();
-
-    $mailchimp->setConfig([
-        'apiKey' => config('services.mailchimp.key'),
-        'server' => 'us8'
-    ]);
-
-    $response = $mailchimp->lists->addListMember("4d966840da", [
-        "email_address" => "Lindsey.White93@hotmail.com",
-        "status" => "subscribed",
-    ]); //4d966840da
-//print_r($response);
-    ddd($response);
-});
-
 Route::get('/', [PostController::class, 'index'])->name('home');
 
 Route::get('posts/{post}', [PostController::class, 'show']);
@@ -52,3 +37,6 @@ Route::post('register', [RegisterController::class, 'store'])->middleware(('gues
 Route::get('login', [SessionController::class, 'create'])->middleware('guest');
 Route::post('login', [SessionController::class, 'store'])->middleware('guest');
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
+
+//NewsLetter
+Route::post('newsletter',[NewsletterController::class, 'addMember']);
