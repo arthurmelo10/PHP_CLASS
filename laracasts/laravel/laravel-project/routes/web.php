@@ -40,3 +40,6 @@ Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth')
 
 //NewsLetter
 Route::post('newsletter',[NewsletterController::class, 'addMember']);
+
+//Admin Section
+Route::get('admin/posts/create', [PostController::class, 'create'])->middleware('admin');

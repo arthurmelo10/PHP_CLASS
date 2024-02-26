@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -20,7 +19,12 @@ class PostController extends Controller
         ]);
     }
 
-    public function show(Post $post) 
+    public function create(): View|Factory
+    {    
+        return view('posts.create');
+    }
+
+    public function show(Post $post): View|Factory
     {
         return view('posts.show',
         [
