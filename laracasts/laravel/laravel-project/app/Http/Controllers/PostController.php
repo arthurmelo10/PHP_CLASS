@@ -22,7 +22,7 @@ class PostController extends Controller
 
     public function create(): View|Factory
     {    
-        return view('posts.create');
+        return view('admin.posts.create');
     }
 
     public function show(Post $post): View|Factory
