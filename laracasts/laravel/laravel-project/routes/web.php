@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PostCommentsController;
@@ -44,3 +45,4 @@ Route::post('newsletter',[NewsletterController::class, 'addMember']);
 //Admin Section
 Route::get('admin/posts/create', [PostController::class, 'create'])->middleware('admin');
 Route::post('admin/posts', [PostController::class, 'store'])->middleware('admin');
+Route::get('admin/posts', [AdminController::class, 'index'])->middleware('admin');
