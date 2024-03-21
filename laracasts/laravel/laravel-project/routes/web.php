@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PostCommentsController;
@@ -40,3 +41,13 @@ Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth')
 
 //NewsLetter
 Route::post('newsletter',[NewsletterController::class, 'addMember']);
+
+//Admin Section
+Route::middleware('can:admin')->group(function() {
+    Route::get('admin/posts', [AdminController::class, 'index']);
+    Route::post('admin/posts', [AdminController::class, 'store']);
+    Route::get('admin/posts/create', [AdminController::class, 'create']);
+    Route::get('admin/posts/{post:id}/edit', [AdminController::class, 'edit']);
+    Route::patch('admin/posts/{post:id}', [AdminController::class, 'update']);
+    Route::delete('admin/posts/{post:id}', [AdminController::class, 'destroy']);
+});
